@@ -1,0 +1,873 @@
+<!doctype html>
+<html lang="my">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0C0307">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Kyi Thet Han — Burmese Thinking Machine">
+<meta property="og:description" content="Turning real experience into practical workplace skills. AI, Learning &amp; Development, Soft Skills.">
+<meta property="og:url" content="https://kelvinmyanmarhan.github.io/">
+<meta property="og:image" content="https://kelvinmyanmarhan.github.io/assets/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Kyi Thet Han — Burmese Thinking Machine</title>
+<meta name="description" content="ဦးကြည်သက်ဟန် (Kyi Thet Han) — AI၊ Learning &amp; Development၊ Soft Skills နဲ့ လုပ်ငန်းခွင် အတွေ့အကြုံ မျှဝေရာ">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&amp;family=Noto+Sans+Myanmar:wght@400;500;600;700;800&amp;family=Outfit:wght@300;400;500;600;700;800&amp;display=swap">
+<style>
+:root{
+  /* Layout: one dark "command deck" world. A deep wine-black space lit by gold, ember and rose light;
+     glass panels float over it. Hero = 3D gold logo with orbit rings and particles behind the portrait,
+     standing on a perspective light grid. Left-aligned on a 1160px column. Single dark look by choice. */
+  --bg:#0C0307;
+  --bg-2:#150610;
+  --panel:rgba(255,255,255,.045);
+  --panel-2:rgba(255,255,255,.075);
+  --stroke:rgba(255,255,255,.11);
+  --stroke-gold:rgba(242,198,109,.45);
+  --gold:#F2C66D;
+  --gold-hi:#FFE9B8;
+  --ember:#FF5A36;
+  --rose:#FF2E7E;
+  --mint:#3CDB97;
+  --text:#F8F0E9;
+  --muted:rgba(248,240,233,.78);
+  --dim:rgba(248,240,233,.42);
+  --glow-gold:rgba(242,198,109,.34);
+  --glow-ember:rgba(255,90,54,.30);
+  --glow-rose:rgba(255,46,126,.22);
+  --grid-line:rgba(242,198,109,.22);
+  --shade:rgba(0,0,0,.6);
+  --nav-bg:rgba(12,3,7,.72);
+  --scrim:rgba(12,3,7,.86);
+  --ink-on-gold:#1B0A05;
+  --cover:#0D1117;
+  --cover-edge:#06080C;
+  --cover-hi:#18202B;
+  --page:#F4EDE1;
+  --page-line:#DFD3BF;
+  --sheen:rgba(255,255,255,.17);
+  --flare:linear-gradient(100deg,var(--gold-hi) 0%,var(--gold) 28%,var(--ember) 68%,var(--rose) 100%);
+  --f-body:"Outfit","Noto Sans Myanmar","Myanmar Text",system-ui,sans-serif;
+  --f-mm:"Outfit","Noto Sans Myanmar","Myanmar Text",system-ui,sans-serif;
+  --f-display:"Outfit","Noto Sans Myanmar","Myanmar Text",system-ui,sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+  --maxw:1160px;
+  --r-lg:26px;
+  --r-md:18px;
+  color-scheme:dark;
+}
+
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--text);font:400 17.5px/1.85 var(--f-body);-webkit-font-smoothing:antialiased;position:relative;overflow-x:clip}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--bg)}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:8px}
+.sprite{position:absolute;width:0;height:0;overflow:hidden}
+.wrap{max-width:var(--maxw);margin-inline:auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.mark{width:30px;height:26px;fill:var(--gold);flex:none}
+.grad{background:var(--flare);-webkit-background-clip:text;background-clip:text;color:var(--gold);-webkit-text-fill-color:transparent}
+
+/* Ambient light behind everything */
+.aurora{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none}
+.aurora i{position:absolute;border-radius:50%;filter:blur(90px)}
+.aurora i:nth-child(1){left:-20%;top:28%;width:60%;aspect-ratio:1;background:var(--glow-rose)}
+.aurora i:nth-child(2){right:-25%;top:46%;width:70%;aspect-ratio:1;background:var(--glow-ember);opacity:.7}
+.aurora i:nth-child(3){left:10%;top:72%;width:55%;aspect-ratio:1;background:var(--glow-gold);opacity:.5}
+.aurora i:nth-child(4){right:-10%;top:90%;width:50%;aspect-ratio:1;background:var(--glow-rose);opacity:.8}
+main,footer,.nav{position:relative;z-index:1}
+
+/* ---------- Nav ---------- */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--nav-bg);-webkit-backdrop-filter:blur(16px) saturate(140%);backdrop-filter:blur(16px) saturate(140%);border-bottom:1px solid var(--stroke)}
+.nav__inner{position:relative;display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:10px}
+.brand{display:inline-flex;align-items:center;gap:10px;color:var(--text);text-decoration:none;font:600 14px/1.3 var(--f-display);letter-spacing:.14em;white-space:nowrap}
+.nav__links{display:flex;gap:2px;margin:0;padding:0;list-style:none}
+.nav__links a{display:block;padding:8px 14px;border-radius:999px;color:var(--text);text-decoration:none;font-size:15px;line-height:1.5}
+.nav__links a:hover{background:var(--panel-2)}
+.menu-btn{display:none;align-items:center;min-height:40px;padding:6px 16px;border:1px solid var(--stroke-gold);border-radius:999px;background:transparent;color:var(--gold-hi);font:500 14px/1 var(--f-body);cursor:pointer}
+@media (max-width:780px){
+  .menu-btn{display:inline-flex}
+  .nav__links{display:none;position:absolute;right:max(16px,env(safe-area-inset-right,0px));top:calc(100% + 8px);flex-direction:column;min-width:210px;padding:8px;background:var(--bg-2);border:1px solid var(--stroke);border-radius:var(--r-md);box-shadow:0 18px 40px var(--shade)}
+  .nav__links.is-open{display:flex}
+  .nav__links a{padding:10px 14px}
+}
+@media (max-width:380px){.brand span{font-size:11.5px;letter-spacing:.08em}}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;isolation:isolate;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;z-index:-2;background:
+  radial-gradient(50% 60% at 76% 46%,var(--glow-ember),transparent 72%),
+  radial-gradient(40% 40% at 8% 6%,var(--glow-rose),transparent 70%),
+  linear-gradient(180deg,var(--bg-2),var(--bg))}
+.hero__gl{position:absolute;inset:0;width:100%;height:100%;z-index:1;display:block;pointer-events:none;opacity:0;transition:opacity .8s ease}
+.hero.is-3d .hero__gl{opacity:1}
+.hero__grid{position:relative;display:grid;grid-template-columns:minmax(0,1fr);gap:4px;padding-block:28px 60px;align-items:center}
+.hero__text{position:relative;z-index:3;min-width:0}
+.motto{margin:0;font:500 13.5px/1.5 var(--f-mono);color:var(--gold);letter-spacing:.03em}
+.hero__name{margin:12px 0 0;padding-top:.1em;font-family:var(--f-mm);font-weight:800;font-size:clamp(40px,min(11vw,5.2vw + 22px),74px);line-height:1.38;color:var(--text);white-space:nowrap}
+.hero__latin{margin:4px 0 0;font:700 clamp(26px,7vw,50px)/1.15 var(--f-display);letter-spacing:.04em;text-transform:uppercase}
+.hero__role{margin:14px 0 0;font:400 13.5px/1.6 var(--f-mono);color:var(--muted)}
+.tagline{margin:18px 0 0;font-family:var(--f-mm);font-size:clamp(16px,4.2vw,19px);font-weight:500;line-height:1.85;max-width:30ch;color:var(--text)}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+
+/* portrait steps out of a glass frame; the 3D gold logo turns between the frame and him */
+.portal{--P:min(78vw,360px);position:relative;width:var(--P);aspect-ratio:1/.83;margin:calc(var(--P) * .5) auto 0}
+.portal__bg{position:absolute;inset:0;z-index:0;border-radius:32px;border:1px solid var(--stroke-gold);background:
+  radial-gradient(85% 70% at 50% 0%,var(--glow-gold),transparent 72%),
+  linear-gradient(180deg,var(--panel-2),var(--bg-2));box-shadow:0 44px 100px var(--shade),inset 0 1px 0 var(--stroke)}
+.portal__clip{position:absolute;z-index:2;left:0;right:0;bottom:0;top:-45.3%;overflow:hidden;border-radius:0 0 32px 32px;pointer-events:none}
+.portal__clip img{position:absolute;left:-8%;top:0;width:116%;max-width:none;height:auto;transform:translate3d(calc(var(--px,0) * -8px),calc(var(--py,0) * -4px),0)}
+.portal__clip::after{content:"";position:absolute;inset:auto 0 0;height:30%;background:linear-gradient(transparent,var(--scrim))}
+.portal__edge{position:absolute;inset:0;z-index:3;border-radius:32px;border:1px solid var(--stroke-gold);border-top-color:transparent;pointer-events:none}
+.plate{position:absolute;z-index:4;left:50%;bottom:-22px;transform:translateX(-50%);display:flex;align-items:center;gap:12px;width:max-content;max-width:calc(100vw - 32px);padding:8px 22px 8px 8px;border:1px solid var(--stroke-gold);border-radius:18px;background:var(--nav-bg);-webkit-backdrop-filter:blur(14px) saturate(150%);backdrop-filter:blur(14px) saturate(150%);box-shadow:0 14px 40px var(--shade);color:var(--text);font:500 13.5px/1.45 var(--f-body);text-decoration:none;white-space:nowrap}
+.plate img{width:36px;height:51px;object-fit:cover;border-radius:5px;display:block}
+.plate b{display:block;font-family:var(--f-mm);font-weight:700;color:var(--gold-hi)}
+.pulse{flex:none;width:9px;height:9px;border-radius:50%;background:var(--mint);box-shadow:0 0 0 0 var(--mint);animation:pulse 2s ease-out infinite}
+@keyframes pulse{to{box-shadow:0 0 0 12px transparent}}
+@media (min-width:960px){
+  .hero__grid{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:40px;padding-block:44px 96px;min-height:min(calc(100svh - 61px),840px)}
+  .portal{--P:min(36vw,430px);margin-top:calc(var(--P) * .42)}
+}
+
+/* 3D photo ring */
+.ring-stage{--w:clamp(196px,54vw,300px);--h:calc(var(--w) * 1.25);--r:calc(var(--w) * 1.2);position:relative;height:calc(var(--h) + 120px);margin-top:30px;perspective:1500px;overflow:hidden;touch-action:pan-y;cursor:grab;user-select:none;-webkit-user-select:none}
+.ring-stage:active{cursor:grabbing}
+.ring-stage::before{content:"";position:absolute;left:50%;bottom:22px;width:min(92%,900px);height:70px;transform:translateX(-50%);border-radius:50%;background:radial-gradient(closest-side,var(--glow-ember),transparent);pointer-events:none}
+.ring3d{position:absolute;left:50%;top:44px;width:var(--w);height:var(--h);margin-left:calc(var(--w) / -2);transform-style:preserve-3d;transform:translateZ(calc(var(--r) * -1)) rotateY(var(--a,0deg))}
+.shot{position:absolute;inset:0;margin:0;transform:rotateY(calc(var(--i) * 51.4286deg)) translateZ(var(--r));border-radius:22px;overflow:hidden;border:1px solid var(--stroke-gold);background:var(--bg-2);backface-visibility:hidden;-webkit-backface-visibility:hidden;box-shadow:0 30px 60px var(--shade)}
+.shot img{display:block;width:100%;height:100%;object-fit:cover;pointer-events:none}
+.shot figcaption{position:absolute;inset:auto 0 0;padding:40px 18px 16px;background:linear-gradient(transparent,var(--scrim));font:600 16px/1.4 var(--f-display);letter-spacing:.03em;color:var(--text)}
+.ring-hint{margin:0;text-align:center;font-size:13px;color:var(--dim)}
+
+/* Ticker */
+.ticker{position:relative;z-index:1;overflow:hidden;border-block:1px solid var(--stroke);background:var(--panel);padding-block:14px}
+.ticker__track{display:flex;width:max-content;animation:ticker 36s linear infinite}
+.ticker__set{display:flex;align-items:center;flex:none}
+.ticker__set span{display:inline-flex;align-items:center;gap:26px;padding-right:26px;font:600 clamp(15px,3.6vw,20px)/1.6 var(--f-display);text-transform:uppercase;letter-spacing:.16em;color:var(--dim);white-space:nowrap}
+.ticker__set span::after{content:"";width:12px;height:11px;background:var(--gold);clip-path:polygon(50% 0,100% 100%,0 100%)}
+.ticker__set span.on{color:var(--text)}
+@keyframes ticker{to{transform:translateX(-50%)}}
+
+/* ---------- Buttons ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:10px 22px;border:1px solid transparent;border-radius:999px;font:600 15px/1.35 var(--f-body);text-decoration:none;cursor:pointer;transition:transform .15s ease,box-shadow .2s ease,background-color .15s ease}
+.btn--hot{background:var(--flare);color:var(--ink-on-gold);box-shadow:0 8px 30px var(--glow-ember)}
+.btn--hot:hover{transform:translateY(-2px);box-shadow:0 12px 40px var(--glow-ember)}
+.btn--glass{border-color:var(--stroke-gold);background:var(--panel);color:var(--gold-hi);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.btn--glass:hover{background:var(--panel-2)}
+.btn:disabled{background:var(--panel-2);color:var(--muted);box-shadow:none;border-color:var(--stroke);cursor:not-allowed;transform:none}
+
+/* ---------- Sections ---------- */
+.band{padding-block:clamp(64px,11vw,120px)}
+.h2{margin:0;font-family:var(--f-mm);font-weight:700;letter-spacing:-.01em;font-size:clamp(30px,6.6vw,54px);line-height:1.42;color:var(--text);text-wrap:balance}
+.lead{margin:12px 0 0;max-width:60ch;color:var(--muted)}
+
+/* Glass cards with a light that follows the pointer */
+.glass{position:relative;border:1px solid var(--stroke);border-radius:var(--r-lg);background:var(--panel);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);overflow:hidden;min-width:0}
+.glass::before{content:"";position:absolute;inset:0;background:radial-gradient(340px circle at var(--mx,50%) var(--my,-40%),var(--glow-gold),transparent 62%);opacity:.55;transition:opacity .25s ease;pointer-events:none}
+.glass:hover{border-color:var(--stroke-gold)}
+.glass:hover::before{opacity:1}
+.glass > *{position:relative}
+
+/* Topics */
+.bento{list-style:none;margin:40px 0 0;padding:0;display:grid;grid-template-columns:minmax(0,1fr);gap:14px}
+@media (min-width:620px){.bento{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:1000px){.bento{grid-template-columns:repeat(12,minmax(0,1fr))}
+  .bento li:nth-child(1){grid-column:span 5}.bento li:nth-child(2){grid-column:span 7}
+  .bento li:nth-child(3){grid-column:span 7}.bento li:nth-child(4){grid-column:span 5}}
+.bento{perspective:1300px}
+.topic{display:grid;gap:8px;align-content:end;min-height:210px;padding:26px;transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .18s ease-out;will-change:transform}
+.topic svg{width:40px;height:40px;color:var(--gold);margin-bottom:auto}
+.topic svg .accent{stroke:var(--ember)}
+.topic h3{margin:22px 0 0;font:700 clamp(19px,4.6vw,24px)/1.4 var(--f-display);color:var(--text)}
+.topic h3.mm{font-family:var(--f-mm);font-weight:800;line-height:1.6}
+.topic p{margin:0;font-size:15.5px;line-height:1.75;color:var(--muted);max-width:44ch}
+
+/* Posts */
+.posts__head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px 32px}
+.posts__head > div:first-child{min-width:0;flex:1 1 320px}
+.tabs{display:inline-flex;gap:4px;padding:4px;border:1px solid var(--stroke);border-radius:999px;background:var(--panel)}
+.tab{min-height:40px;padding:6px 18px;border:0;border-radius:999px;background:transparent;color:var(--muted);font:500 15px/1.4 var(--f-body);cursor:pointer}
+.tab[aria-selected="true"]{background:var(--flare);color:var(--ink-on-gold);font-weight:600}
+.post-grid{list-style:none;margin:32px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:14px}
+.post{display:grid;gap:10px;align-content:start;padding:24px}
+.post__meta{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:6px 10px}
+.post time{font:400 13px/1.5 var(--f-mono);color:var(--gold)}
+.chip{display:inline-block;padding:1px 11px;border:1px solid var(--stroke-gold);border-radius:999px;color:var(--gold-hi);font:500 12.5px/1.7 var(--f-mono)}
+.state{justify-self:start;display:inline-flex;align-items:center;gap:8px;font:500 13px/1.6 var(--f-mm);color:var(--mint)}
+.state::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--mint)}
+.state--soon{color:var(--gold-hi)}
+.state--soon::before{background:transparent;border:1.5px solid var(--gold)}
+.post h3{margin:2px 0 0;font-family:var(--f-mm);font-weight:700;font-size:20px;line-height:1.65;color:var(--text);text-wrap:balance}
+.post p{margin:0;font-size:15.5px;line-height:1.8;color:var(--muted)}
+.posts__more{display:inline-block;margin-top:26px;color:var(--gold-hi);font-weight:600;text-underline-offset:5px}
+.empty{margin:32px 0 0;padding:28px;color:var(--muted)}
+
+/* Book */
+.bookpanel{padding:clamp(22px,5vw,56px);border-color:var(--stroke-gold)}
+.book-grid{display:grid;gap:26px;align-items:center}
+@media (min-width:920px){.book-grid{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:56px}}
+.book-stage{--w:clamp(190px,52vw,262px);--h:calc(var(--w) * 1.4211);--t:calc(var(--w) * .1);
+  position:relative;display:grid;place-items:center;min-height:calc(var(--h) + 200px);perspective:1300px;touch-action:pan-y;cursor:grab;user-select:none;-webkit-user-select:none;border-radius:20px}
+.book-stage:active{cursor:grabbing}
+.book-stage::before{content:"";position:absolute;inset:6% 0;border-radius:50%;background:radial-gradient(closest-side,var(--glow-ember),transparent);pointer-events:none}
+.ring{position:absolute;left:50%;top:calc(50% + var(--h) / 2 + 6px);width:calc(var(--w) * 1.5);height:54px;transform:translateX(-50%);border-radius:50%;border:1px solid var(--stroke-gold);box-shadow:0 0 30px var(--glow-gold),inset 0 0 26px var(--glow-ember);pointer-events:none}
+.book{position:relative;width:var(--w);height:var(--h);transform-style:preserve-3d;transform:rotateX(5deg) rotateY(var(--ry,-24deg))}
+.book__face{position:absolute;backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.book__front{inset:0;transform:translateZ(calc(var(--t) / 2));border-radius:2px 5px 5px 2px;overflow:hidden;background:var(--cover)}
+.book__front img{display:block;width:100%;height:100%;object-fit:cover;pointer-events:none}
+.book__front::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,transparent 38%,var(--sheen) 50%,transparent 62%);background-size:300% 100%;background-position:var(--sheen-x,50%) 0;pointer-events:none}
+.book__back{inset:0;transform:rotateY(180deg) translateZ(calc(var(--t) / 2));border-radius:5px 2px 2px 5px;background:linear-gradient(90deg,var(--cover-hi),var(--cover) 30%)}
+.book__spine{top:0;left:calc((var(--w) - var(--t)) / 2);width:var(--t);height:100%;transform:rotateY(-90deg) translateZ(calc(var(--w) / 2));display:grid;place-items:center;overflow:hidden;background:linear-gradient(90deg,var(--cover-edge),var(--cover) 30%,var(--cover-hi) 70%,var(--cover-edge))}
+.book__spine span{writing-mode:vertical-rl;font:600 calc(var(--t) * .36)/1 var(--f-body);color:var(--text);white-space:nowrap}
+.book__spine b{color:var(--mint)}
+.book__pages{top:3px;left:calc((var(--w) - var(--t)) / 2);width:var(--t);height:calc(100% - 6px);transform:rotateY(90deg) translateZ(calc(var(--w) / 2 - 3px));background:repeating-linear-gradient(90deg,var(--page) 0 2px,var(--page-line) 2px 3px)}
+.book__top{left:0;top:calc((var(--h) - var(--t)) / 2);width:calc(100% - 3px);height:var(--t);transform:rotateX(90deg) translateZ(calc(var(--h) / 2 - 3px));background:repeating-linear-gradient(0deg,var(--page) 0 2px,var(--page-line) 2px 3px)}
+.book__bottom{left:0;top:calc((var(--h) - var(--t)) / 2);width:calc(100% - 3px);height:var(--t);transform:rotateX(-90deg) translateZ(calc(var(--h) / 2 - 3px));background:repeating-linear-gradient(0deg,var(--page) 0 2px,var(--page-line) 2px 3px)}
+.backmark{position:absolute;inset:7%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:calc(var(--w) * .03);border:1px solid var(--stroke-gold);border-radius:4px;text-align:center}
+.backmark svg{width:54%;height:auto;filter:drop-shadow(0 0 14px var(--glow-gold))}
+.backmark b{margin-top:calc(var(--w) * .04);font:600 calc(var(--w) * .052)/1.3 var(--f-display);letter-spacing:.16em;text-transform:uppercase;color:var(--gold-hi)}
+.backmark span{font:400 calc(var(--w) * .042)/1.3 var(--f-mono);color:var(--mint)}
+.drag-hint{position:absolute;left:0;right:0;bottom:0;margin:0;text-align:center;font-size:13px;line-height:1.5;color:var(--dim)}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:3px 14px;border-radius:999px;border:1px solid var(--mint);color:var(--mint);font:500 13px/1.7 var(--f-mono)}
+.bookpanel .h2{margin-top:14px;font-size:clamp(28px,6.4vw,46px)}
+.book-sub{margin:10px 0 0;max-width:46ch;color:var(--muted)}
+.count{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;max-width:420px;margin:24px 0 0}
+.count div{display:grid;justify-items:center;padding:12px 4px;border:1px solid var(--stroke);border-radius:var(--r-md);background:var(--panel)}
+.count b{font:500 clamp(22px,6vw,32px)/1.2 var(--f-mono);font-variant-numeric:tabular-nums;color:var(--gold-hi)}
+.count span{font-size:12.5px;line-height:1.6;color:var(--muted)}
+.launch{margin:12px 0 0;font-size:15px;color:var(--muted)}
+.launch b{color:var(--gold-hi);font-weight:600}
+.facts{display:flex;flex-wrap:wrap;gap:14px 40px;margin:26px 0 0;padding:22px 0 0;border-top:1px solid var(--stroke)}
+.fact{display:flex;flex-direction:column-reverse;margin:0}
+.fact dt{font-size:14px;line-height:1.5;color:var(--muted)}
+.fact dd{margin:0;font-family:var(--f-mm);font-weight:800;font-size:38px;line-height:1.35}
+.toc{list-style:none;margin:24px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.toc li{padding:4px 14px;border:1px solid var(--stroke);border-radius:999px;background:var(--panel);font-size:14.5px;line-height:1.75;color:var(--text)}
+.book-actions{display:flex;flex-wrap:wrap;align-items:center;gap:12px 18px;margin-top:28px}
+.note{margin:0;font-size:14.5px;line-height:1.6;color:var(--muted)}
+.note a{color:var(--gold-hi);text-underline-offset:3px}
+
+/* About */
+.about-grid{display:grid;gap:40px}
+@media (min-width:920px){.about-grid{grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:64px;align-items:start}.career{position:sticky;top:88px}}
+.about-grid > div{min-width:0}
+.bio p{margin:18px 0 0;max-width:64ch;font-family:var(--f-mm);line-height:2;color:var(--muted)}
+.pull{margin:26px 0 8px;padding:4px 0 4px 22px;border-left:3px solid var(--gold);font:600 clamp(20px,4.8vw,26px)/1.75 var(--f-mm);color:var(--text);max-width:30ch;text-wrap:balance}
+.bio .bio__lead{margin-top:28px;color:var(--text);font-weight:600}
+.bio__topics{margin:12px 0 0;padding:0;list-style:none;display:grid;gap:10px;max-width:64ch;counter-reset:t}
+.bio__topics li{counter-increment:t;display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px;align-items:baseline;padding:12px 16px;border:1px solid var(--stroke);border-radius:var(--r-md);background:var(--panel);font-family:var(--f-mm);line-height:1.8;color:var(--text)}
+.bio__topics li::before{content:counter(t,myanmar);font:700 20px/1 var(--f-mm);color:var(--gold)}
+.career{padding:28px}
+.side-title{margin:0 0 12px;font:500 13px/1.5 var(--f-mono);letter-spacing:.04em;color:var(--gold)}
+.side-title--2{margin-top:26px;padding-top:22px;border-top:1px solid var(--stroke)}
+.path{list-style:none;margin:0;padding:0}
+.path li{position:relative;padding:7px 0 7px 34px;font:500 17px/1.5 var(--f-display);color:var(--text)}
+.path small{display:block;margin-top:2px;font:400 13.5px/1.6 var(--f-mm);color:var(--muted)}
+.path li::before{content:"";position:absolute;left:1px;top:14px;width:11px;height:11px;border-radius:50%;border:2px solid var(--gold);background:var(--bg)}
+.path li.now{color:var(--gold-hi);font-weight:700}
+.path li.now small{color:var(--mint)}
+.path li.now::before{background:var(--gold);box-shadow:0 0 0 5px var(--glow-gold),0 0 18px var(--gold)}
+.path li:not(:last-child)::after{content:"";position:absolute;left:7px;top:29px;bottom:-12px;width:2px;background:linear-gradient(var(--gold),var(--ember))}
+.wins{list-style:none;margin:0;padding:0;display:grid;gap:9px}
+.wins li{position:relative;padding-left:22px;font:400 15px/1.75 var(--f-mm);color:var(--text)}
+.wins li::before{content:"";position:absolute;left:2px;top:.62em;width:10px;height:9px;background:var(--gold);clip-path:polygon(50% 0,100% 100%,0 100%)}
+.roles{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.roles li{padding:4px 13px;border:1px solid var(--stroke-gold);border-radius:999px;font:500 14.5px/1.6 var(--f-display);color:var(--text)}
+
+/* Contact */
+.contact{border-top:1px solid var(--stroke)}
+.contact__title{margin:0;font-family:var(--f-mm);font-weight:800;font-size:clamp(34px,9vw,72px);line-height:1.45;max-width:14ch;text-wrap:balance}
+.contact p{max-width:56ch;color:var(--muted)}
+.handle{margin:18px 0 0;font:400 14px/1.6 var(--f-mono);color:var(--gold-hi);user-select:all;overflow-wrap:anywhere}
+.foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 24px;margin-top:64px;padding-top:22px;border-top:1px solid var(--stroke);font-size:13.5px;line-height:1.6;color:var(--muted)}
+.foot .brand{font:400 13.5px/1.6 var(--f-body);letter-spacing:0;color:var(--muted);white-space:normal}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .ticker__track,.pulse{animation:none}
+  .topic{transition:none}
+  .btn{transition:none}
+}
+</style>
+</head>
+<body>
+
+
+<svg class="sprite" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="gold-grad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" style="stop-color:var(--gold-hi)"/>
+      <stop offset=".5" style="stop-color:var(--gold)"/>
+      <stop offset="1" style="stop-color:var(--ember)"/>
+    </linearGradient>
+    <symbol id="btm-logo" viewBox="0 0 845.2 732"><path id="btm-path" fill-rule="evenodd" d="M422.6 0.3L844.9 731.7L-0.1 731.7ZM522.9 713.7L541.3 714L541.3 709L528.9 709L528.9 704L539.6 704L539.9 699.7L528.9 699.3L528.9 694.7L540.9 694.7L541.3 690L523.3 689.7ZM483.9 713.7L489.6 713.7L489.6 699.7L501.6 714L505.6 714L506.3 690.3L500.3 690L500.3 704L488.6 689.7L484.3 689.7ZM461.3 713.7L466.6 714L466.9 690L461.6 689.7ZM422.3 713.7L427.9 713.7L427.9 704.3L438.6 704.3L438.6 713.7L443.9 714L444.3 690L438.6 690L438.6 699L427.9 699L427.9 690L422.6 689.7ZM345.3 713.7L350.9 714L353.3 709L364.3 709L366.6 714L371.9 714L361.9 690.3L356.3 689.7ZM362.3 704.3L355.3 704.3L358.6 696ZM304.6 714L309.9 713.7L309.9 700.3L316.3 711L319.3 711.3L325.9 700L325.9 713.7L331.6 713.7L331.3 689.7L326.3 690.3L317.9 704.3L309.6 690.3L304.3 690ZM385.3 697.3L385.3 706.3L392.9 713.7L403.3 713.3L407.6 710L403.9 706.7L398.9 709.3L393.3 708L390.6 704L390.6 699.7L395.3 694.7L399.3 694.3L403.9 697L407.6 693.7L401.6 689.7L392.9 690ZM659.9 470.7L653.6 479L655.6 488.7L662.9 495.3L671.6 490.3L668.9 486L662.9 489.3L660.6 487.3L658.9 480.7L661.9 476.3L668.6 475L673.6 480L673.9 485.7L678.3 487L679.3 484.7L676.3 474.7L668.6 469.3ZM173.3 467.3L166.3 479.3L186.9 491.3L194.9 477.7L195.3 472L190.3 468L185.3 469.7L182.3 464.3L177.3 464ZM190.3 476.7L186.3 484.3L181.3 481.3L185.3 474.7L188.3 473.3ZM181.3 472L177.6 479.3L172.9 476.7L176.3 471L179.6 469.7ZM630.6 444.3L633.6 449.3L645.6 442.3L639.3 459L641.6 463.3L662.3 451.7L659.3 446.7L647.3 453.7L653.6 437.3L651.3 432.3ZM193.3 433L207.6 442.3L207.3 447.7L202.3 450L187.9 442L184.9 447L199.6 455.3L205.6 455.3L211.6 450L213.3 441.3L208.9 435.7L195.9 428.3ZM619.6 424.3L621.6 429L642.6 418L640.3 413ZM209.9 403.7L204.3 413.7L224.9 425.7L227.9 420.7L222.3 417.3L225.6 413L232.6 412.7L235.6 407.3L226.6 408L225.6 403L222.6 400L215.3 399ZM221.3 407L218.3 415L211.3 411L216.9 404.3ZM600.9 393L603.6 397.7L608.6 395L613.3 396L608.9 407L612.3 412.7L618.6 397.3L632.6 400L629.6 394.7L615.3 391.3L624.6 385.7L621.6 381ZM233.6 362.7L241.9 377.7L225.3 377.7L222.6 382L243.3 394L245.9 389.3L234.3 382.7L247.9 381.3L248.6 379.7L242.3 368.3L253.6 375L256.9 370.7L236.3 358.7ZM581.6 359L584.6 364L596.6 357L589.9 374L592.3 378L613.3 366L610.3 361.3L598.3 368.3L604.6 351.3L602.3 347.3ZM244.6 343.7L265.3 356L274.6 339.7L270.6 337.7L264.6 348L259.6 346L264.3 335.7L261.3 334.3L255.6 343.7L251.6 341.3L257.6 331L253.6 328.3ZM570.6 339L572.3 343.7L592.9 333L591.3 328ZM264.6 308.3L263.9 315L270.3 320L282.9 312L282.6 317.7L276.9 322.7L279.6 326.7L286.9 319.7L288.6 310.3L285.3 306.7L280.9 306L271.9 313.7L269.6 313.7L269.9 308.3L274.6 304L271.3 300.3ZM550.6 305.7L553.6 310.7L561.3 306L566.9 315L558.6 320L561.6 324.7L582.3 312.7L579.3 307.7L571.3 312.3L566.3 303.3L573.9 298.7L571.3 293.7ZM278.6 285.3L298.9 297.3L308.6 281.3L304.6 279L298.3 289.7L293.6 287L298.9 278L296.6 276.3L294.3 276.7L289.6 285L285.3 282.7L291.6 272L287.6 269.7ZM549.6 265.7L553.3 272L536.9 281.7L539.6 286.7L555.6 277.3L560.3 283.7L563.9 281.3L553.6 263ZM103.6 671.7L740.9 672L422.3 120ZM443.6 650L443.6 648L446.6 646ZM446.6 628.3L446.3 630.7L445.9 627.7L443.9 625.7L442.6 626.7L443.6 624.7ZM446.6 612.7L444.6 613.3L446.9 606ZM452.9 606.3L452.3 611.3L449.6 609.3L449.9 605.7ZM454.9 602.3L451.3 603L450.6 598.7ZM449.9 588.3L450.9 587.3L448.3 593L447.6 585.3ZM363.6 506.3L359.3 510L358.9 507.3L364.6 502ZM431.3 496.3L430.3 502.7L428.6 500.7L429.3 495.7ZM343.9 439.7L343.9 443.3L341.9 443.7L338.6 439.3ZM433.6 201.3L435.3 205L438.3 204.7L442.9 210L442.6 214.3L447.6 226L449.9 222L455.6 224.3L457.3 249.3L454.9 257.7L456.3 260.3L452.6 262L455.9 268L451.6 268.7L447.9 275.3L443.3 275L442.9 279.7L438.6 284L436.3 283L433.6 288L435.3 293.3L429.6 296L429.3 303.7L432.6 304.3L433.9 311L429.6 316L432.3 318.3L443.9 311.7L454.6 312.7L459.9 311L455.3 315.3L455.3 319.3L458.3 320.7L459.6 324L457.9 326.3L460.6 329.3L459.9 334.7L467.9 337.7L470.9 336.3L474.9 340.3L472.3 341L469.9 345.3L470.9 351.7L466.3 360L484.3 362.7L484.3 370.3L488.6 372L487.6 375.3L489.9 377.7L493.6 375.3L496.3 377.3L499.6 377L509.9 369.7L512.3 373L508.3 378.3L501.9 380.7L497.3 389.7L499.9 391.3L493.9 392L490.3 395.3L487.9 404.3L484.3 401.3L478.3 404.7L472.9 403L474.6 408.3L469.9 410.7L464.6 409.7L460.9 418L458.3 417L452.9 419.7L445.9 420L441.3 417L440.6 420.7L436.9 422.7L434.9 426.7L435.9 433.7L432.6 438L434.6 446.3L429.3 448.3L425.6 447.3L429.6 454L431.9 453L434.6 460.3L432.9 464.3L451.9 486.3L450.6 490.3L455.3 500.7L459.3 497L460.6 498.3L458.9 504.3L452.9 506.3L452.9 522.7L450.3 522L448.9 524.7L446.9 524L443.9 528.7L445.6 535.3L452.9 546L464.9 557.3L467.3 572.3L464.9 576.7L467.9 584L471.9 587.3L473.3 597.7L474.9 598L477.3 605.3L472.9 610.3L467.9 621.3L457.6 631.3L458.3 635.7L452.9 647L450.9 630.7L453.3 630.3L453.9 626.7L456.9 625.7L455.6 621L457.9 617.7L457.3 609L460.6 607.3L458.6 606.3L458.9 604.3L455.9 608L454.3 607L456.3 604L453.3 603.7L456.9 601.7L456.9 599.7L454.9 598L456.6 595.7L452.9 595.3L456.3 593L454.3 590.7L456.6 589L454.9 588.3L456.3 584.3L453.6 573.3L446.3 561L444.9 553L443.6 564.7L442.9 550L437.9 539L440.6 537.7L439.3 535.7L437.3 537.3L435.9 534L436.6 526.3L434.6 523.7L435.9 520.7L434.3 510.7L430.9 507L432.3 496.3L434.6 494.3L426.3 496L425.6 491.7L423.3 489.7L422.3 481L420.6 481.7L419.9 478.3L414.9 473.3L413.6 474.7L415.6 476.3L414.3 479.3L415.6 483.7L410.6 493.7L404.9 496L400.6 492.3L401.9 498.3L395.9 498.7L394.9 502L389.3 503L387.6 508.3L382.3 513.7L379.3 513.7L380.3 504.3L376.6 512.7L374.9 506.7L377.6 504.7L376.6 504L373.9 505.7L372.3 512.7L369.3 512.3L370.3 511L368.9 510.3L366.6 511.7L370.3 507.3L369.6 505L366.3 510.7L362.9 508.7L366.6 499L365.3 495L364.3 501L361.9 500.3L359.9 505L355.3 507.7L355.9 495.3L358.6 491.7L360.6 480L363.6 476.7L362.6 470.3L363.9 470.3L360.3 461.3L360.6 456.7L357.6 453.7L359.3 452.3L353.6 443L354.9 442.3L353.6 440L350.9 439.7L351.3 428L349.3 432.7L347.6 431.7L349.3 436.7L347.9 439.3L342.6 435.3L338.3 428L339.6 426L344.6 430.7L348.6 428.7L345.3 429.3L341.9 424.7L343.6 423L345.6 425L348.6 424.7L343.9 421L345.6 418.3L344.6 419.7L343.9 417.7L340.9 418.7L344.3 414.3L339.9 414.7L334.9 409.7L330.3 410.3L332.3 416L329.9 412L330.3 415.3L326.6 409.3L329.9 408L327.3 408.3L329.3 399.3L325.3 408.3L323.6 408.7L322.3 407L325.6 404.3L323.6 400.3L320.3 397.7L320.9 405.3L313.3 395L308.9 384.3L309.6 378.7L311.9 377L317.6 382L318.9 381.3L317.9 364.3L319.9 360.7L324.6 364.7L326.6 363.7L327.9 359L330.3 359.3L331.3 357.3L329.3 344.7L331.3 342.3L330.6 338.3L333.3 339.3L335.9 336L337.3 324L334.6 312.7L337.6 315.7L342.9 314.3L352.9 318L356.6 306.3L365.9 289.3L365.6 286.3L362.6 284.7L363.6 280L372.9 271L372.6 266.7L375.9 263.7L373.6 257.7L375.6 249L381.9 247L398.6 232.7L411.6 230.3L414.6 235L420.3 237.3L420.9 235.7L415.3 228L414.9 224L422.9 216.3L425.6 216.3L424.9 209.3L430.3 200Z"/></symbol>
+  </defs>
+</svg>
+
+<div class="aurora" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+
+<header class="nav">
+  <div class="wrap nav__inner">
+    <a class="brand" href="#top"><svg class="mark" aria-hidden="true"><use href="#btm-logo" width="100%" height="100%"/></svg><span>BURMESE THINKING MACHINE</span></a>
+    <button class="menu-btn" type="button" id="menu-btn" aria-expanded="false" aria-controls="nav-links">Menu</button>
+    <ul class="nav__links" id="nav-links">
+      <li><a href="#posts">Post များ</a></li>
+      <li><a href="#book">စာအုပ်</a></li>
+      <li><a href="#about">အကြောင်း</a></li>
+      <li><a href="#contact">ဆက်သွယ်ရန်</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" id="hero" aria-labelledby="hero-name">
+    <canvas class="hero__gl" id="gl" aria-hidden="true"></canvas>
+    <div class="wrap hero__grid">
+      <div class="hero__text">
+        <p class="motto">// Think. Learn. Lead.</p>
+        <h1 class="hero__name" id="hero-name">ဦးကြည်သက်ဟန်</h1>
+        <p class="hero__latin grad">Kyi Thet Han</p>
+        <p class="hero__role">Executive Leader / Trainer / Author</p>
+        <p class="tagline">လက်တွေ့ အတွေ့အကြုံတွေကို အလုပ်ခွင်မှာ ချက်ချင်း သုံးလို့ရတဲ့ ကျွမ်းကျင်မှုအဖြစ် မျှဝေပေးနေပါတယ်။</p>
+        <div class="cta">
+          <a class="btn btn--hot" href="#posts">Post တွေ ဖတ်မယ်</a>
+          <a class="btn btn--glass" href="#moments">ပုံတွေ ကြည့်မယ်</a>
+        </div>
+      </div>
+      <div class="portal" id="portal">
+        <div class="portal__bg"></div>
+        <div class="portal__clip"><img src="assets/kth-1160.webp" srcset="assets/kth-640.webp 640w, assets/kth-1160.webp 1160w" sizes="(min-width: 960px) 500px, 90vw" width="1160" height="1254" alt="ဦးကြည်သက်ဟန်"></div>
+        <div class="portal__edge"></div>
+        <a class="plate" href="#book"><img src="assets/pe-cover.webp" width="36" height="51" alt=""><span><b>Prompt Engineering လက်စွဲ</b>အခမဲ့ ebook · Nov 21</span></a>
+      </div>
+    </div>
+  </section>
+
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker__track">
+      <div class="ticker__set"><span class="on">Think</span><span>Learn</span><span class="on">Lead</span><span>AI</span><span class="on">Learning &amp; Development</span><span>Soft Skills</span><span class="on">Real Experience</span><span>Prompt Engineering</span></div>
+      <div class="ticker__set"><span class="on">Think</span><span>Learn</span><span class="on">Lead</span><span>AI</span><span class="on">Learning &amp; Development</span><span>Soft Skills</span><span class="on">Real Experience</span><span>Prompt Engineering</span></div>
+    </div>
+  </div>
+
+  <section class="band" id="moments" aria-labelledby="moments-title" style="padding-bottom:0">
+    <div class="wrap">
+      <h2 class="h2" id="moments-title">Seminars, Workshops, <span class="grad">Trainings and Interviews</span></h2>
+      <p class="lead">Moments from the rooms and stages where I teach, speak and share.</p>
+    </div>
+    <div class="ring-stage" id="ring-stage" tabindex="0" role="group" aria-label="မှတ်တမ်းပုံများ။ ဘယ်ညာ ဆွဲပြီး လှည့်ကြည့်နိုင်ပါတယ်။">
+      <div class="ring3d" id="ring3d">
+        <figure class="shot" style="--i:0"><img src="assets/g1.webp" width="560" height="700" alt="Hoodie ဝတ်ပြီး mic ကိုင်ကာ ရှင်းပြနေပုံ"><figcaption>Knowledge Sharing</figcaption></figure>
+        <figure class="shot" style="--i:1"><img src="assets/g4.webp" width="560" height="700" loading="lazy" alt="သင်တန်းခန်းထဲ slide ပြပြီး သင်ကြားနေပုံ"><figcaption>AI Training</figcaption></figure>
+        <figure class="shot" style="--i:2"><img src="assets/g2.webp" width="560" height="700" loading="lazy" alt="စင်ပေါ်မှာ ဟောပြောနေပုံ"><figcaption>Seminar</figcaption></figure>
+        <figure class="shot" style="--i:3"><img src="assets/g7.webp" width="560" height="700" loading="lazy" alt="ကျောင်းသားများရှေ့ lecture ပေးနေပုံ"><figcaption>University Lecture</figcaption></figure>
+        <figure class="shot" style="--i:4"><img src="assets/g3.webp" width="560" height="700" loading="lazy" alt="Podium မှာ ဆွေးနွေးနေပုံ"><figcaption>Guest Speaker</figcaption></figure>
+        <figure class="shot" style="--i:5"><img src="assets/g5.webp" width="560" height="700" loading="lazy" alt="Corporate workshop မှာ သင်ကြားနေပုံ"><figcaption>Corporate Workshop</figcaption></figure>
+        <figure class="shot" style="--i:6"><img src="assets/g6.webp" width="560" height="700" loading="lazy" alt="TV အစီအစဉ်မှာ ဆွေးနွေးနေပုံ"><figcaption>TV Interview</figcaption></figure>
+      </div>
+    </div>
+    <p class="ring-hint" aria-hidden="true">Drag to rotate</p>
+  </section>
+
+  <section class="band" aria-labelledby="topics-title">
+    <div class="wrap">
+      <h2 class="h2" id="topics-title">ဘာတွေ <span class="grad">မျှဝေမလဲ</span></h2>
+      <p class="lead">အလုပ်ခွင်မှာ တကယ် အသုံးဝင်တဲ့ အကြောင်းအရာ ၄ ခုကို အဓိကထား ရေးပါတယ်။</p>
+      <ul class="bento">
+        <li class="glass topic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2.5"/><path d="M7 10l3 2.5L7 15"/><path class="accent" d="M12.5 15h4.5"/></svg>
+          <h3>AI</h3>
+          <p>ChatGPT၊ Gemini၊ Claude ကို နေ့စဉ် အလုပ်ထဲမှာ လက်တွေ့ သုံးနည်း</p>
+        </li>
+        <li class="glass topic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20h5v-4.5h5V11h5V6.5h3"/><path class="accent" d="M17.5 3.5L21 6.5l-3.5 3"/></svg>
+          <h3>Learning &amp; Development</h3>
+          <p>အဖွဲ့အစည်းတွင်း သင်ယူမှုကို စနစ်တကျ တည်ဆောက်နည်း</p>
+        </li>
+        <li class="glass topic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 6.5A2.5 2.5 0 0 1 6 4h7.5A2.5 2.5 0 0 1 16 6.5v4a2.5 2.5 0 0 1-2.5 2.5H9l-3.5 3v-3A2.5 2.5 0 0 1 3.5 10.5z"/><path class="accent" d="M18.5 9.2A2 2 0 0 1 20.5 11v3.6a2 2 0 0 1-2 2v2.6L15.6 17h-3.4a2 2 0 0 1-1.7-1"/></svg>
+          <h3>Soft Skills</h3>
+          <p>ပြောဆိုဆက်ဆံရေး၊ ဦးဆောင်မှုနဲ့ အဖွဲ့လိုက် လုပ်ကိုင်မှု</p>
+        </li>
+        <li class="glass topic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2.5"/><path d="M9 7V5.5A1.5 1.5 0 0 1 10.5 4h3A1.5 1.5 0 0 1 15 5.5V7"/><path class="accent" d="M3 12.5h18"/></svg>
+          <h3 class="mm">လုပ်ငန်းခွင် အတွေ့အကြုံ</h3>
+          <p>IT၊ telecom နဲ့ banking လုပ်ငန်းတွေကနေ ရလာတဲ့ သင်ခန်းစာများ</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="band" id="posts" aria-labelledby="posts-title" style="padding-top:0">
+    <div class="wrap">
+      <div class="posts__head">
+        <div>
+          <h2 class="h2" id="posts-title">နောက်ဆုံး <span class="grad">post များ</span></h2>
+          <p class="lead">Facebook Page နဲ့ LinkedIn မှာ တင်ထားတဲ့ post တွေကို ဒီမှာ တစ်နေရာတည်း စုထားပါတယ်။</p>
+        </div>
+        <div class="tabs" role="tablist" aria-label="Post ဘာသာစကား">
+          <button class="tab" type="button" role="tab" id="tab-mm" aria-selected="true" aria-controls="panel-mm">မြန်မာ</button>
+          <button class="tab" type="button" role="tab" id="tab-en" aria-selected="false" aria-controls="panel-en" tabindex="-1">English</button>
+        </div>
+      </div>
+      <div id="panel-mm" role="tabpanel" aria-labelledby="tab-mm">
+        <ul class="post-grid">
+          <li class="glass post">
+            <div class="post__meta"><time datetime="2026-11-18">2026.11.18</time><span class="chip">AI</span></div>
+            <span class="state state--soon">ည ၈ နာရီ တင်မယ်</span>
+            <h3>Prompt ကောင်းဆိုတာ ရှည်တဲ့ prompt မဟုတ်ဘဲ ရှင်းတဲ့ prompt</h3>
+            <p>Prompt တစ်ခုတည်းကို Before / After ယှဉ်ပြီး ပြောင်းလိုက်တဲ့ ၃ ချက်နဲ့ အဖြေ ဘယ်လို ကွာသွားလဲ ပြထားပါတယ်။</p>
+          </li>
+          <li class="glass post">
+            <div class="post__meta"><time datetime="2026-11-16">2026.11.16</time><span class="chip">Book</span></div>
+            <span class="state state--soon">ည ၈ နာရီ တင်မယ်</span>
+            <h3>တန်ဆောင်တိုင် ပညာဒါန — Prompt Engineering လက်စွဲ</h3>
+            <p>ဒုတိယမြောက် စာအုပ်ကို ဘာကြောင့် ရေးဖြစ်လဲ၊ ဘာတွေ ပါလဲ။ အခန်း ၃၇ · Framework ၃၀+ · Template ၆၀။ Nov 21 ည ၈ နာရီ အခမဲ့ ထုတ်ဝေမယ်။</p>
+          </li>
+          <li class="glass post">
+            <div class="post__meta"><time datetime="2026-11-13">2026.11.13</time><span class="chip">L&amp;D</span></div>
+            <span class="state">တင်ပြီး</span>
+            <h3>သင်တန်းက တကယ် အလုပ်ဖြစ်လား — Kirkpatrick Model</h3>
+            <p>သင်တန်းရလဒ်ကို Level အလိုက် ဘယ်လို တိုင်းမလဲ၊ မေးခွန်း ၃ ခုပါ checklist နဲ့။ Vendor နဲ့ Internal Training Team တွေအတွက်။</p>
+          </li>
+          <li class="glass post">
+            <div class="post__meta"><time datetime="2026-11-11">2026.11.11</time><span class="chip">AI</span></div>
+            <span class="state">တင်ပြီး</span>
+            <h3>AI က မှားတာလား?</h3>
+            <p>AI အဖြေ မကောင်းရင် prompt ကို Role၊ Context၊ Format ၃ ချက်နဲ့ ပြန်စစ်ကြည့်ပါ။</p>
+          </li>
+          <li class="glass post">
+            <div class="post__meta"><time datetime="2026-11-09">2026.11.09</time><span class="chip">Page</span></div>
+            <span class="state">တင်ပြီး</span>
+            <h3>Burmese Thinking Machine ကို စလိုက်ပါပြီ</h3>
+            <p>ကျွန်တော်တို့ တစ်ယောက်ချင်းစီ ဖြတ်သန်းခဲ့ရတဲ့ အတွေ့အကြုံတွေဟာ အများကို မျှဝေလိုက်မှသာ “ပညာ” ဖြစ်လာတာပါ။</p>
+          </li>
+        </ul>
+        <a class="posts__more" href="https://www.facebook.com/BurmeseThinkingMachine" target="_blank" rel="noopener">Facebook Page မှာ post အားလုံး ဖတ်ရန်</a>
+      </div>
+      <div id="panel-en" role="tabpanel" aria-labelledby="tab-en" hidden>
+        <p class="glass empty">English insights for HR, L&amp;D leaders and business owners will appear here, starting with my LinkedIn posts.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="book" aria-labelledby="book-title" style="padding-top:0">
+    <div class="wrap">
+      <div class="glass bookpanel">
+        <div class="book-grid">
+          <div class="book-stage" id="book-stage" tabindex="0" role="img" aria-label="Prompt Engineering လက်စွဲ စာအုပ်။ ဘယ်ညာ ဆွဲပြီး လှည့်ကြည့်နိုင်ပါတယ်။">
+            <div class="ring" aria-hidden="true"></div>
+            <div class="book" id="book3d">
+              <div class="book__face book__front"><img src="assets/pe-cover.webp" width="720" height="1023" alt=""></div>
+              <div class="book__face book__back"><div class="backmark"><svg viewBox="0 0 845.2 732" aria-hidden="true"><use href="#btm-logo" fill="url(#gold-grad)"/></svg><b>Burmese Thinking Machine</b><span>Think. Learn. Lead.</span></div></div>
+              <div class="book__face book__spine"><span>Prompt Engineering <b>လက်စွဲ</b> · ဦးကြည်သက်ဟန်</span></div>
+              <div class="book__face book__pages"></div>
+              <div class="book__face book__top"></div>
+              <div class="book__face book__bottom"></div>
+            </div>
+            <p class="drag-hint" aria-hidden="true">ဘယ်ညာ ဆွဲပြီး လှည့်ကြည့်ပါ</p>
+          </div>
+          <div class="book-info">
+            <span class="pill"><span class="pulse" aria-hidden="true"></span>အခမဲ့ ebook</span>
+            <h2 class="h2" id="book-title"><span class="grad">Prompt Engineering</span> လက်စွဲ</h2>
+            <p class="book-sub">ChatGPT၊ Gemini၊ Claude၊ DeepSeek နဲ့ LLM တိုင်းမှာ သုံးနိုင်တဲ့ AI နဲ့ စကားပြောနည်း အပြည့်အစုံ</p>
+            <div class="count" id="count" aria-hidden="true">
+              <div><b id="cd-d">--</b><span>ရက်</span></div>
+              <div><b id="cd-h">--</b><span>နာရီ</span></div>
+              <div><b id="cd-m">--</b><span>မိနစ်</span></div>
+              <div><b id="cd-s">--</b><span>စက္ကန့်</span></div>
+            </div>
+            <p class="launch" id="launch-line"><b>Nov 21, 2026 (စနေ) ည ၈ နာရီ</b> မှာ ထုတ်ဝေမယ်</p>
+            <dl class="facts">
+              <div class="fact"><dt>အပိုင်း</dt><dd class="grad">၈</dd></div>
+              <div class="fact"><dt>အခန်း</dt><dd class="grad">၃၇</dd></div>
+              <div class="fact"><dt>Prompt Template</dt><dd class="grad">၆၀</dd></div>
+            </dl>
+            <ul class="toc" aria-label="စာအုပ်ထဲမှာ">
+              <li>AI နဲ့ Prompt အခြေခံ</li>
+              <li>Prompt Framework ၃၀ ကျော်</li>
+              <li>Prompting နည်းစနစ်များ</li>
+              <li>Prompt ထက် ကျော်လွန်ပြီး</li>
+              <li>Prompt Template ၆၀</li>
+            </ul>
+            <div class="book-actions">
+              <button class="btn btn--hot" type="button" disabled>Nov 21 မှာ download ရမယ်</button>
+              <p class="note">ထုတ်ဝေတဲ့နေ့ <a href="https://www.facebook.com/BurmeseThinkingMachine" target="_blank" rel="noopener">Facebook Page</a> မှာ ကြေညာပါမယ်။</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band about" id="about" aria-labelledby="about-title" style="padding-top:0">
+    <div class="wrap about-grid">
+      <div class="bio">
+        <h2 class="h2" id="about-title">ကျွန်တော့် <span class="grad">အကြောင်း</span></h2>
+        <blockquote class="pull">ကျွန်တော်တို့ တစ်ယောက်ချင်းစီ ဖြတ်သန်းခဲ့ရတဲ့ အတွေ့အကြုံတွေဟာ အများကို မျှဝေလိုက်မှသာ “ပညာ” ဖြစ်လာတာပါ။</blockquote>
+        <p>ကျွန်တော်ကတော့ အခြေခံ IT Service Help Desk ဘဝကနေ စခဲ့ပြီး Team Lead၊ Senior Manager၊ Project Manager၊ ISP Deputy Head နဲ့ IT Head Position များကို အောက်သက်ကြေစွာ အဆင့်ဆင့် ဖြတ်သန်းခဲ့ပါတယ်။</p>
+        <p>တစ်ဖက်မှာလည်း Development and Talent Framework တွေကို အားသန်သူမို့ နည်းပညာဆိုင်ရာ ဘာသာရပ်တွေနဲ့ ပတ်သက်ပြီး ဘုန်းတော်ကြီးသင် ပညာဒါနကျောင်းတွေကနေ International University တွေ၊ Worldwide Education Brand တွေ၊ Vendor-based Vocational Certification တွေရဲ့ အစီအစဉ်တွေအပြင် နိုင်ငံတကာ ထောက်ပံ့မှုနဲ့ INGO အဖွဲ့အစည်းကြီးတွေရဲ့ Development &amp; Learning Project တွေအထိ ဆောင်ရွက်ခဲ့ပါတယ်။ National Level Curriculum Development Project တွေနဲ့ Framework တွေကိုလည်း Myanmar Region ရဲ့ CLO (Chief Learning Officer) အနေနဲ့ Public နဲ့ Private University တွေအထိ အဆင့်မြှင့်တင် ရေးဆွဲ ကူညီ ဆောင်ရွက်ပေးခဲ့ပါတယ်။</p>
+        <p>BIM Group of Companies ရဲ့ Education/Development/Academic/Vocational ပိုင်းမှာလည်း General Manager, Director အဖြစ် တာဝန်ယူခဲ့ပြီး အခု Managing Director အဖြစ် တာဝန်ထမ်းဆောင်နေပါတယ်။</p>
+        <p>မြန်မာနိုင်ငံရဲ့ ဦးဆောင်ဘဏ်ကြီးတစ်ခုမှာလည်း Deputy Function Head of HR / Head of Development and Learning / Deputy General Manager အဖြစ် တာဝန်ယူခဲ့ပါတယ်။ နိုင်ငံတကာ မိတ်ဖက်အဖွဲ့အစည်းတွေနဲ့ ပူးပေါင်းပြီး ဝန်ထမ်း တစ်သောင်းခွဲနီးပါးအတွက် နည်းပညာနဲ့ L&amp;D ကို ပေါင်းစပ်ကာ Learning Framework တွေ၊ Learning Model တွေကို Delivery ပုံစံ အမျိုးမျိုးနဲ့ ပြောင်းလဲမှုတွေ လုပ်ခဲ့ပါတယ်။ အဖွဲ့အစည်းအတွက် လိုအပ်တဲ့ Learning Management System (LMS) ကိုလည်း ကိုယ်တိုင် Design ဆွဲ၊ တည်ဆောက်ပြီး အကောင်အထည်ဖော်ခဲ့ပါတယ်။</p>
+        <p>သမာရိုးကျ Product Information Training အမျိုးမျိုးနဲ့ Booster Program တွေ၊ Quarterly Program တွေ၊ Annual Training Plan တွေကို ဆောင်ရွက်ခဲ့သလို အသစ်သစ်သော နည်းပညာရပ်များကို သမာရိုးကျ ဘာသာရပ်များဖြင့် ပေါင်းစည်းကာ ပြောင်းလဲမှုအသစ်များကိုလည်း ဖော်ဆောင်ခဲ့ပါတယ်။ မြန်မာနိုင်ငံက Private College တွေနဲ့ ပူးပေါင်းပြီး ယခု အောင်မြင်နေတဲ့ Student Ambassadors Program ကိုလည်း ကိုယ်တိုင် ဦးဆောင် Design ရေးဆွဲ တည်ဆောက်ခဲ့ပါတယ်။ ဘဏ်ရဲ့ National Disaster Recovery Project တွေ၊ Mother Room နဲ့ Lactation Room Project တွေ၊ Child Care Center တွေကိုလည်း တာဝန်ယူ ဦးဆောင်ခဲ့ပါတယ်။ ထို့အပြင် အဖွဲ့အစည်းအတွက် Top Employer Institute ရဲ့ Top Employer Myanmar 2024, 2025 &amp; 2026 ထိ ကျန် HR Function Head ၃ ဦးဖြင့် ပူးပေါင်း ယူဆောင်ပေးခဲ့တာလည်း ဖြစ်ပါတယ်။ မြန်မာနိုင်ငံမှာ ဘဏ်က လုပ်ဆောင်တဲ့ ကူညီထောက်ပံ့ရေး လုပ်ငန်းအမျိုးမျိုးအတွက် Social Purpose and Impact Partnership (SPIP) Committee ရဲ့ Committee Member အဖြစ်လည်း တာဝန်ထမ်းဆောင်ခဲ့ပါတယ်။</p>
+        <p>ဒီခရီးတစ်လျှောက် သင်ယူ လေ့လာခဲ့ရတဲ့ သင်ခန်းစာတွေနဲ့ ဖြတ်သန်းခဲ့ရတဲ့ လုပ်ငန်းခွင် အတွေ့အကြုံတွေကို LinkedIn နဲ့ Facebook မှာ တစ်စွန်းတစ တင်ခဲ့ဖူးပါတယ်။ နောက်ပိုင်း စာအုပ်တွေပါ ထုတ်ဖြစ်လာတာမို့ အားလုံးကို တစ်နေရာတည်းမှာ စုပြီး မျှဝေနိုင်ဖို့ "Burmese Thinking Machine" ကို စလိုက်ပါတယ်။</p>
+        <p class="bio__lead">ဒီ Page မှာ အဓိက မျှဝေသွားမယ့် အကြောင်းအရာတွေက —</p>
+        <ol class="bio__topics">
+          <li>AI ကို လက်တွေ့ လုပ်ငန်းခွင်၊ Business System နဲ့ Management Cycle တွေမှာ ဘယ်လို အသုံးချမလဲ</li>
+          <li>Learning &amp; Development Framework တွေ</li>
+          <li>Soft Skills နဲ့ Leadership က လက်တွေ့မှာ ဘယ်လောက် အရေးပါလဲ</li>
+          <li>ကျွန်တော့် အလုပ်ခရီးက သင်ခန်းစာတွေနဲ့ ကျွန်တော် ရေးသားထားတဲ့ စာအုပ်တွေ</li>
+        </ol>
+        <p>စတာတွေကို ရေးသား မျှဝေသွားပါမယ်။</p>
+      </div>
+      <div class="glass career">
+        <p class="side-title">// IT &amp; Telecom</p>
+        <ol class="path">
+          <li>IT Service Help Desk</li>
+          <li>Team Lead</li>
+          <li>Senior Manager</li>
+          <li>Project Manager</li>
+          <li>ISP Deputy Head</li>
+          <li>IT Head</li>
+        </ol>
+        <p class="side-title side-title--2">// Education &amp; Development</p>
+        <ol class="path">
+          <li>Chief Learning Officer<small>Myanmar Region · National Level Curriculum Development</small></li>
+          <li>General Manager<small>BIM Group of Companies · Education / Development / Academic / Vocational</small></li>
+          <li>Director</li>
+          <li class="now">Managing Director<small>လက်ရှိ</small></li>
+        </ol>
+        <p class="side-title side-title--2">// Banking · HR &amp; L&amp;D</p>
+        <ul class="roles">
+          <li>Deputy Function Head of HR</li>
+          <li>Head of Development and Learning</li>
+          <li>Deputy General Manager</li>
+        </ul>
+        <p class="side-title side-title--2">// Highlights</p>
+        <ul class="wins">
+          <li>ဝန်ထမ်း တစ်သောင်းခွဲနီးပါးအတွက် Learning Framework နဲ့ Learning Model များ</li>
+          <li>Learning Management System (LMS) ကို ကိုယ်တိုင် Design ဆွဲ တည်ဆောက်</li>
+          <li>Student Ambassadors Program ကို ဦးဆောင် ရေးဆွဲ တည်ဆောက်</li>
+          <li>Top Employer Myanmar 2024, 2025 &amp; 2026</li>
+          <li>SPIP Committee Member</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="band contact" id="contact" aria-labelledby="contact-title">
+  <div class="wrap">
+    <h2 class="contact__title" id="contact-title">မေးချင်တာ ရှိရင် <span class="grad">message ပို့ပါ</span></h2>
+    <p>အလုပ်ခွင်မှာ AI သုံးတာ၊ L&amp;D၊ soft skills နဲ့ ပတ်သက်ပြီး မေးချင်တာ၊ ပူးပေါင်းချင်တာ ရှိရင် Facebook Page ကနေ ဆက်သွယ်နိုင်ပါတယ်။ ကျွန်တော် ကိုယ်တိုင် ဖတ်ပြီး ပြန်ဖြေပေးပါမယ်။</p>
+    <div class="cta">
+      <a class="btn btn--hot" href="https://m.me/BurmeseThinkingMachine" target="_blank" rel="noopener">Messenger မှာ message ပို့ရန်</a>
+      <a class="btn btn--glass" href="https://www.facebook.com/BurmeseThinkingMachine" target="_blank" rel="noopener">Facebook Page</a>
+    </div>
+    <p class="handle">facebook.com/BurmeseThinkingMachine</p>
+    <div class="foot">
+      <span class="brand"><svg class="mark" aria-hidden="true"><use href="#btm-logo" width="100%" height="100%"/></svg><span>© 2026 Kyi Thet Han · Burmese Thinking Machine</span></span>
+      <span class="motto">// Think. Learn. Lead.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(() => {
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Menu (phone)
+  const menuBtn = document.getElementById('menu-btn');
+  const links = document.getElementById('nav-links');
+  menuBtn.addEventListener('click', () => {
+    const open = links.classList.toggle('is-open');
+    menuBtn.setAttribute('aria-expanded', String(open));
+  });
+  links.addEventListener('click', (e) => {
+    if (e.target.closest('a')) { links.classList.remove('is-open'); menuBtn.setAttribute('aria-expanded', 'false'); }
+  });
+
+  // Post language tabs
+  const tabs = Array.from(document.querySelectorAll('.tab'));
+  const select = (tab) => tabs.forEach((t) => {
+    const on = t === tab;
+    t.setAttribute('aria-selected', String(on));
+    t.tabIndex = on ? 0 : -1;
+    document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
+  });
+  tabs.forEach((t, i) => {
+    t.addEventListener('click', () => select(t));
+    t.addEventListener('keydown', (e) => {
+      if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+      const next = tabs[(i + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length];
+      select(next); next.focus();
+    });
+  });
+
+  // Glass cards: light follows the pointer
+  document.querySelectorAll('.glass').forEach((card) => {
+    card.addEventListener('pointermove', (e) => {
+      const r = card.getBoundingClientRect();
+      card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+      card.style.setProperty('--my', (e.clientY - r.top) + 'px');
+    });
+  });
+
+  // Topic cards tilt in 3D toward the pointer
+  if (matchMedia('(pointer: fine)').matches && !reduce) {
+    document.querySelectorAll('.topic').forEach((card) => {
+      card.addEventListener('pointermove', (e) => {
+        const r = card.getBoundingClientRect();
+        card.style.setProperty('--ry', (((e.clientX - r.left) / r.width - 0.5) * 12).toFixed(2) + 'deg');
+        card.style.setProperty('--rx', ((0.5 - (e.clientY - r.top) / r.height) * 10).toFixed(2) + 'deg');
+      });
+      card.addEventListener('pointerleave', () => { card.style.setProperty('--ry', '0deg'); card.style.setProperty('--rx', '0deg'); });
+    });
+  }
+
+  // 3D photo ring: turns slowly, drag to spin
+  (() => {
+    const st = document.getElementById('ring-stage'), ring = document.getElementById('ring3d');
+    let a = 0, v = 0, drag = false, lx = 0, last = 0, on = false, id = 0, prev = 0;
+    const frame = (now) => {
+      const dt = Math.min(50, now - (prev || now)); prev = now;
+      if (!drag) { if (!reduce && now - last > 1800) a -= dt * 0.006; a += v; v *= 0.94; }
+      ring.style.setProperty('--a', a.toFixed(2) + 'deg');
+      id = on ? requestAnimationFrame(frame) : 0;
+    };
+    st.addEventListener('pointerdown', (e) => { drag = true; lx = e.clientX; v = 0; try { st.setPointerCapture(e.pointerId); } catch (_) {} });
+    st.addEventListener('pointermove', (e) => { if (!drag) return; const dx = e.clientX - lx; lx = e.clientX; a += dx * 0.32; v = dx * 0.32; last = performance.now(); });
+    const end = () => { if (drag) { drag = false; last = performance.now(); } };
+    st.addEventListener('pointerup', end); st.addEventListener('pointercancel', end);
+    st.addEventListener('keydown', (e) => { if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return; e.preventDefault(); a += e.key === 'ArrowRight' ? -51.43 : 51.43; last = performance.now(); if (!id) ring.style.setProperty('--a', a.toFixed(2) + 'deg'); });
+    new IntersectionObserver(([en]) => { on = en.isIntersecting; if (on && !id) { prev = 0; id = requestAnimationFrame(frame); } }).observe(st);
+  })();
+
+  // Countdown to the ebook launch: Nov 21, 2026, 8:00 PM Myanmar time (UTC+6:30)
+  const launch = Date.UTC(2026, 10, 21, 13, 30, 0);
+  const cd = { d: document.getElementById('cd-d'), h: document.getElementById('cd-h'), m: document.getElementById('cd-m'), s: document.getElementById('cd-s') };
+  const pad = (n) => String(n).padStart(2, '0');
+  const tickCount = () => {
+    const left = launch - Date.now();
+    if (left <= 0) {
+      document.getElementById('count').hidden = true;
+      document.getElementById('launch-line').innerHTML = '<b>ထွက်ပြီ။</b> Facebook Page မှာ ရယူနိုင်ပါတယ်';
+      return false;
+    }
+    const s = Math.floor(left / 1000);
+    cd.d.textContent = pad(Math.floor(s / 86400));
+    cd.h.textContent = pad(Math.floor(s % 86400 / 3600));
+    cd.m.textContent = pad(Math.floor(s % 3600 / 60));
+    cd.s.textContent = pad(s % 60);
+    return true;
+  };
+  if (tickCount()) { const iv = setInterval(() => { if (!tickCount()) clearInterval(iv); }, 1000); }
+
+  // 3D book: drag to turn; drifts gently when left alone
+  const stage = document.getElementById('book-stage');
+  const book = document.getElementById('book3d');
+  let ry = -24, vel = 0, dragging = false, lastX = 0, lastMove = 0, raf = 0, visible = false;
+  const apply = () => {
+    book.style.setProperty('--ry', ry.toFixed(2) + 'deg');
+    book.style.setProperty('--sheen-x', (50 - Math.sin(ry * Math.PI / 180) * 45).toFixed(1) + '%');
+  };
+  const tick = (now) => {
+    if (!dragging) {
+      if (!reduce && now - lastMove > 1400) {
+        const target = -18 + Math.sin(now / 1800) * 24;
+        const nearest = target + 360 * Math.round((ry - target) / 360);
+        ry += (nearest - ry) * 0.03;
+      }
+      ry += vel; vel *= 0.93;
+    }
+    apply();
+    raf = visible ? requestAnimationFrame(tick) : 0;
+  };
+  stage.addEventListener('pointerdown', (e) => {
+    dragging = true; lastX = e.clientX; vel = 0;
+    try { stage.setPointerCapture(e.pointerId); } catch (_) {}
+  });
+  stage.addEventListener('pointermove', (e) => {
+    if (!dragging) return;
+    const dx = e.clientX - lastX; lastX = e.clientX;
+    ry += dx * 0.6; vel = dx * 0.6; lastMove = performance.now();
+  });
+  const endDrag = () => { if (dragging) { dragging = false; lastMove = performance.now(); } };
+  stage.addEventListener('pointerup', endDrag);
+  stage.addEventListener('pointercancel', endDrag);
+  stage.addEventListener('keydown', (e) => {
+    if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+    e.preventDefault(); ry += e.key === 'ArrowRight' ? 20 : -20; lastMove = performance.now();
+    if (!raf) apply();
+  });
+  new IntersectionObserver(([entry]) => {
+    visible = entry.isIntersecting;
+    if (visible && !raf) raf = requestAnimationFrame(tick);
+  }).observe(stage);
+  apply();
+})();
+</script>
+
+<script type="module">
+import * as THREE from './assets/three.module.min.js';
+
+// Background 3D only: the gold logo with orbit rings and drifting dust. The rotating head is drawn by the page script.
+const hero = document.getElementById('hero');
+const canvas = document.getElementById('gl');
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const conn = navigator.connection;
+const lowPower = (conn && conn.saveData) || (navigator.deviceMemory && navigator.deviceMemory < 2);
+const clamp01 = (x) => Math.min(1, Math.max(0, x));
+const END = '\n#include <tonemapping_fragment>\n#include <colorspace_fragment>\n';
+
+function parsePolys(d) {
+  const polys = []; let cur = null; const re = /([MLZ])([^MLZ]*)/g; let m;
+  while ((m = re.exec(d))) {
+    const nums = m[2].trim() ? m[2].trim().split(/[\s,]+/).map(Number) : [];
+    if (m[1] === 'M') { cur = []; polys.push(cur); }
+    for (let i = 0; i + 1 < nums.length; i += 2) cur.push([nums[i], nums[i + 1]]);
+  }
+  return polys.filter((p) => p.length > 2);
+}
+function inside(pt, poly) {
+  let c = false;
+  for (let i = 0, j = poly.length - 1; i < poly.length; j = i++) {
+    const [xi, yi] = poly[i], [xj, yj] = poly[j];
+    if ((yi > pt[1]) !== (yj > pt[1]) && pt[0] < (xj - xi) * (pt[1] - yi) / (yj - yi) + xi) c = !c;
+  }
+  return c;
+}
+function area(p) { let a = 0; for (let i = 0, j = p.length - 1; i < p.length; j = i++) a += (p[j][0] + p[i][0]) * (p[j][1] - p[i][1]); return Math.abs(a / 2); }
+function buildShapes(polys, cx, cy) {
+  const n = polys.length, areas = polys.map(area);
+  const depth = new Array(n).fill(0), parent = new Array(n).fill(-1);
+  for (let i = 0; i < n; i++) for (let j = 0; j < n; j++) {
+    if (i === j || areas[j] <= areas[i] || !inside(polys[i][0], polys[j])) continue;
+    depth[i]++; if (parent[i] < 0 || areas[j] < areas[parent[i]]) parent[i] = j;
+  }
+  let inner = -1;
+  for (let i = 0; i < n; i++) if (depth[i] === 1 && (inner < 0 || areas[i] > areas[inner])) inner = i;
+  const inMap = (i) => { for (let k = i; k >= 0; k = parent[k]) if (parent[k] === inner) return true; return false; };
+  const v = (p) => new THREE.Vector2(p[0] - cx, -(p[1] - cy));
+  const shapes = new Map(), frame = [], map = [];
+  [...polys.keys()].sort((a, b) => depth[a] - depth[b]).forEach((i) => {
+    if (depth[i] % 2 === 0) { const s = new THREE.Shape(polys[i].map(v)); shapes.set(i, s); (inMap(i) ? map : frame).push(s); }
+    else if (shapes.has(parent[i])) shapes.get(parent[i]).holes.push(new THREE.Path(polys[i].map(v)));
+  });
+  return { frame, map };
+}
+function makeEnvironment(renderer) {
+  const env = new THREE.Scene();
+  env.add(new THREE.Mesh(new THREE.BoxGeometry(12, 12, 12), new THREE.MeshBasicMaterial({ color: 0x24060f, side: THREE.BackSide })));
+  const panel = (w, h, hex, k, pos, rot) => {
+    const m = new THREE.Mesh(new THREE.PlaneGeometry(w, h), new THREE.MeshBasicMaterial({ color: new THREE.Color(hex).multiplyScalar(k), side: THREE.DoubleSide }));
+    m.position.set(...pos); m.rotation.set(...rot); env.add(m);
+  };
+  panel(8, 2.4, 0xfff4e0, 5, [0, 5.6, 0], [Math.PI / 2, 0, 0]);
+  panel(2.6, 6, 0xffe2b0, 4, [-5.6, 0.6, 1.5], [0, Math.PI / 2, 0]);
+  panel(2, 5, 0xff5a36, 3.2, [5.6, -0.4, -1], [0, -Math.PI / 2, 0]);
+  panel(7, 3, 0xfff0d0, 3, [0, 1.2, 5.6], [0, Math.PI, 0]);
+  const pm = new THREE.PMREMGenerator(renderer);
+  const tex = pm.fromScene(env, 0.035).texture; pm.dispose();
+  return tex;
+}
+
+function start() {
+  const small = innerWidth < 760;
+  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true, powerPreference: 'high-performance' });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, small ? 1.75 : 2));
+  renderer.setClearColor(0x000000, 0);
+  renderer.toneMapping = THREE.NeutralToneMapping;
+  const scene = new THREE.Scene();
+  scene.environment = makeEnvironment(renderer);
+  const camera = new THREE.PerspectiveCamera(30, 1, 100, 30000);
+  const VH = 2000;
+
+  const glow = new THREE.Mesh(new THREE.PlaneGeometry(1500, 1500), new THREE.ShaderMaterial({
+    transparent: true, depthWrite: false, depthTest: false, blending: THREE.AdditiveBlending,
+    uniforms: { uI: { value: 0.3 } },
+    vertexShader: 'varying vec2 vUv; void main(){ vUv = uv; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }',
+    fragmentShader: 'uniform float uI; varying vec2 vUv; void main(){ float d = length(vUv - 0.5) * 2.0; float a = pow(max(0.0, 1.0 - d), 2.4) * uI; gl_FragColor = vec4(vec3(1.0, 0.62, 0.2) * a, a);' + END + '}',
+  }));
+  glow.renderOrder = -2; scene.add(glow);
+
+  const dN = small ? 160 : 340, dPos = new Float32Array(dN * 3), dCol = new Float32Array(dN * 3);
+  const pal = [[1, 0.8, 0.45], [1, 0.45, 0.2], [1, 0.25, 0.4]];
+  for (let i = 0; i < dN; i++) {
+    dPos[i * 3] = (Math.random() - 0.5) * 5200; dPos[i * 3 + 1] = (Math.random() - 0.5) * 2600; dPos[i * 3 + 2] = (Math.random() - 0.5) * 2400 - 300;
+    const c = pal[i % 3], k = 0.35 + Math.random() * 0.9; dCol[i * 3] = c[0] * k; dCol[i * 3 + 1] = c[1] * k; dCol[i * 3 + 2] = c[2] * k;
+  }
+  const dGeo = new THREE.BufferGeometry();
+  dGeo.setAttribute('position', new THREE.BufferAttribute(dPos, 3)); dGeo.setAttribute('color', new THREE.BufferAttribute(dCol, 3));
+  const dust = new THREE.Points(dGeo, new THREE.PointsMaterial({ size: 8, vertexColors: true, transparent: true, opacity: 0.9, blending: THREE.AdditiveBlending, depthWrite: false, sizeAttenuation: true }));
+  dust.frustumCulled = false; scene.add(dust);
+
+  const { frame, map } = buildShapes(parsePolys(document.getElementById('btm-path').getAttribute('d')), 422.4, 366);
+  const opts = { depth: 34, bevelEnabled: true, bevelThickness: 3, bevelSize: 1.2, bevelSegments: 2, curveSegments: 1 };
+  const mk = (hex, rough) => new THREE.MeshStandardMaterial({ color: hex, metalness: 0.85, roughness: rough, emissive: 0x6b3a08, emissiveIntensity: 0.5 });
+  const face = mk(0xf2c66d, 0.24), side = mk(0xb98632, 0.4), mapFace = mk(0xffdc8f, 0.28);
+  const frameGeo = new THREE.ExtrudeGeometry(frame, opts); frameGeo.translate(0, 0, -17);
+  const mapGeo = new THREE.ExtrudeGeometry(map, { ...opts, depth: 26 }); mapGeo.translate(0, 0, 2);
+  const logo = new THREE.Group();
+  logo.add(new THREE.Mesh(frameGeo, [face, side]), new THREE.Mesh(mapGeo, [mapFace, side]));
+  const orbit = new THREE.Group(); scene.add(orbit); orbit.add(logo);
+  const dl = (hex, i, x, y, z) => { const l = new THREE.DirectionalLight(hex, i); l.position.set(x, y, z); scene.add(l); };
+  dl(0xfff1d6, 2.2, -1.2, 1.6, 2.4); dl(0xff5a36, 2.0, 2.5, -0.5, -1.0); dl(0xffe6bd, 2.4, 0.2, 0.4, 1);
+  const ringMat = (r, g, b, o) => new THREE.MeshBasicMaterial({ color: new THREE.Color(r, g, b), transparent: true, opacity: o, blending: THREE.AdditiveBlending, depthWrite: false });
+  const rings = [[480, 2.2, [1, 0.8, 0.4], [1.25, 0.2, 0]], [540, 1.8, [1, 0.4, 0.2], [1.0, -0.55, 0.3]], [600, 1.6, [1, 0.25, 0.45], [1.42, 0.65, -0.2]]].map(([r, tube, col, rot]) => {
+    const m = new THREE.Mesh(new THREE.TorusGeometry(r, tube, 8, 200), ringMat(...col, 0.55)); m.rotation.set(...rot);
+    const bead = new THREE.Mesh(new THREE.SphereGeometry(12, 12, 12), ringMat(1, 0.92, 0.7, 1)); bead.position.set(r, 0, 0); m.add(bead);
+    orbit.add(m); return m;
+  });
+
+  let baseY = 0;
+  const resize = () => {
+    const w = hero.clientWidth, h = hero.clientHeight; if (!w || !h) return;
+    renderer.setSize(w, h, false);
+    const aspect = w / h; camera.aspect = aspect;
+    const dist = VH / 2 / Math.tan(THREE.MathUtils.degToRad(15));
+    camera.position.set(0, 0, dist); camera.near = dist / 20; camera.far = dist * 5; camera.updateProjectionMatrix();
+    // sit the logo right behind his head: read where the portrait frame is on the page
+    const fr = document.querySelector('.portal__bg').getBoundingClientRect(), hr = hero.getBoundingClientRect();
+    const P = fr.width, u = VH / h, far = (dist + 300) / dist;
+    const px = fr.left - hr.left + P * 0.42, py = fr.top - hr.top - P * 0.03;
+    orbit.position.set((px - w / 2) * u * far, -(py - h / 2) * u * far, -300);
+    orbit.scale.setScalar(P * 1.04 * u * far / 845);
+    baseY = orbit.position.y; glow.position.copy(orbit.position); glow.position.z -= 100; glow.scale.setScalar(orbit.scale.x * 2.2);
+  };
+  resize();
+  hero.classList.add('is-3d');
+
+  const pointer = { x: 0, y: 0 }, tilt = { x: 0, y: 0 };
+  if (matchMedia('(pointer: fine)').matches) addEventListener('pointermove', (e) => { pointer.x = e.clientX / innerWidth * 2 - 1; pointer.y = e.clientY / innerHeight * 2 - 1; }, { passive: true });
+  let inView = true, raf = 0;
+  const t0 = performance.now();
+  const draw = (now) => {
+    const t = (now - t0) / 1000;
+    const r = hero.getBoundingClientRect(), ps = clamp01(-r.top / r.height);
+    tilt.x += (pointer.y - tilt.x) * 0.06; tilt.y += (pointer.x - tilt.y) * 0.06;
+    hero.style.setProperty('--px', tilt.y.toFixed(3)); hero.style.setProperty('--py', tilt.x.toFixed(3));
+    camera.position.x = tilt.y * 120; camera.position.y = -tilt.x * 70; camera.lookAt(0, 0, 0);
+    logo.rotation.y = Math.sin(t * 0.5) * 0.5 + tilt.y * 0.35 + ps * 2.2;
+    logo.rotation.x = -0.06 + tilt.x * 0.14;
+    orbit.position.y = baseY + Math.sin(t * 0.8) * 8;
+    rings.forEach((m, i) => { m.rotation.z = t * (i === 1 ? -0.32 : 0.26 + i * 0.06); });
+    glow.material.uniforms.uI.value = 0.3 * (0.92 + 0.08 * Math.sin(t * 1.7));
+    dust.rotation.y = t * 0.02 + tilt.y * 0.1; dust.rotation.x = tilt.x * 0.06;
+    renderer.render(scene, camera);
+  };
+  const loop = (now) => { draw(now); raf = (inView && !document.hidden) ? requestAnimationFrame(loop) : 0; };
+  const wake = () => { if (!raf && inView && !document.hidden) raf = requestAnimationFrame(loop); };
+  new ResizeObserver(resize).observe(hero);
+  new IntersectionObserver(([entry]) => { inView = entry.isIntersecting; wake(); }).observe(hero);
+  document.addEventListener('visibilitychange', wake);
+  wake();
+}
+if (!lowPower && !reduce) { try { start(); } catch (err) { console.warn('3D background is off.', err); } }
+</script>
+
+</body>
+</html>
