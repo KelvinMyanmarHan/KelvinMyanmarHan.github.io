@@ -188,18 +188,13 @@ main,footer,.nav{position:relative;z-index:1}
 /* Posts */
 .posts__head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px 32px}
 .posts__head > div:first-child{min-width:0;flex:1 1 320px}
-.nav__right{display:flex;align-items:center;gap:10px}
-.langs{display:inline-flex;gap:2px;padding:3px;border:1px solid var(--stroke);border-radius:999px;background:var(--panel)}
+.nav__lang{display:flex;align-items:center}
+.langs{display:inline-flex;gap:2px;margin-left:6px;padding:3px;border:1px solid var(--stroke);border-radius:999px;background:var(--panel)}
 .lang{display:inline-flex;align-items:center;min-height:36px;padding:4px 14px;border:0;border-radius:999px;background:transparent;color:var(--muted);font:500 13.5px/1.9 var(--f-body);cursor:pointer;white-space:nowrap}
 .lang:hover{color:var(--text)}
 .lang[aria-pressed="true"]{background:var(--flare);color:var(--ink-on-gold);font-weight:600}
-@media (max-width:860px){.nav__right{gap:8px}.lang{padding:4px 11px;font-size:13px}}
-@media (max-width:600px){
-  .nav__inner{flex-wrap:wrap;row-gap:8px;padding-block:9px}
-  .brand{font-size:12.5px;letter-spacing:.11em}
-  .nav__right{margin-left:auto;flex:0 0 auto}
-}
-@media (max-width:380px){.brand{font-size:11px;letter-spacing:.07em}.hero__name{font-size:35px}}
+@media (max-width:780px){.nav__lang{margin-top:6px;padding:2px}.langs{margin:0;width:100%;justify-content:center}}
+@media (max-width:380px){.hero__name{font-size:35px}}
 .tabs{display:inline-flex;gap:4px;padding:4px;border:1px solid var(--stroke);border-radius:999px;background:var(--panel)}
 .tab{min-height:40px;padding:6px 18px;border:0;border-radius:999px;background:transparent;color:var(--muted);font:500 15px/1.4 var(--f-body);cursor:pointer}
 .tab[aria-selected="true"]{background:var(--flare);color:var(--ink-on-gold);font-weight:600}
@@ -324,16 +319,14 @@ main,footer,.nav{position:relative;z-index:1}
 <header class="nav">
   <div class="wrap nav__inner">
     <a class="brand" href="#top"><svg class="mark" aria-hidden="true"><use href="#btm-logo" width="100%" height="100%"/></svg><span>BURMESE THINKING MACHINE</span></a>
-    <div class="nav__right">
+    <button class="menu-btn" type="button" id="menu-btn" aria-expanded="false" aria-controls="nav-links" data-i18n="nav.menu">Menu</button>
     <ul class="nav__links" id="nav-links">
       <li><a href="#posts" data-i18n="nav.posts">Post များ</a></li>
       <li><a href="#book" data-i18n="nav.book">စာအုပ်</a></li>
       <li><a href="#about" data-i18n="nav.about">အကြောင်း</a></li>
       <li><a href="#contact" data-i18n="nav.contact">ဆက်သွယ်ရန်</a></li>
+      <li class="nav__lang"><div class="langs" role="group" aria-label="Language"><button class="lang" type="button" data-lang="my" aria-pressed="true">မြန်မာ</button><button class="lang" type="button" data-lang="en" aria-pressed="false">EN</button><button class="lang" type="button" data-lang="zh" aria-pressed="false">中文</button></div></li>
     </ul>
-    <div class="langs" role="group" aria-label="Language"><button class="lang" type="button" data-lang="my" aria-pressed="true">မြန်မာ</button><button class="lang" type="button" data-lang="en" aria-pressed="false">EN</button><button class="lang" type="button" data-lang="zh" aria-pressed="false">中文</button></div>
-    <button class="menu-btn" type="button" id="menu-btn" aria-expanded="false" aria-controls="nav-links" data-i18n="nav.menu">Menu</button>
-    </div>
   </div>
 </header>
 
