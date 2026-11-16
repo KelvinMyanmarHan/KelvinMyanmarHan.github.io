@@ -51,8 +51,8 @@
   --page-line:#DFD3BF;
   --sheen:rgba(255,255,255,.17);
   --flare:linear-gradient(100deg,var(--gold-hi) 0%,var(--gold) 28%,var(--ember) 68%,var(--rose) 100%);
-  --f-body:"Outfit","Noto Sans Myanmar","Myanmar Text",system-ui,sans-serif;
-  --f-mm:"Outfit","Noto Sans Myanmar","Myanmar Text",system-ui,sans-serif;
+  --f-body:"Outfit","Noto Sans Myanmar","Myanmar Text","Noto Sans SC",system-ui,sans-serif;
+  --f-mm:"Outfit","Noto Sans Myanmar","Myanmar Text","Noto Sans SC",system-ui,sans-serif;
   --f-display:"Outfit","Noto Sans Myanmar","Myanmar Text",system-ui,sans-serif;
   --f-mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
   --maxw:1160px;
@@ -188,6 +188,12 @@ main,footer,.nav{position:relative;z-index:1}
 /* Posts */
 .posts__head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px 32px}
 .posts__head > div:first-child{min-width:0;flex:1 1 320px}
+.nav__lang{display:flex;align-items:center}
+.langs{display:inline-flex;gap:2px;margin-left:8px;padding:3px;border:1px solid var(--stroke);border-radius:999px;background:var(--panel)}
+.lang{display:inline-flex;align-items:center;min-height:36px;padding:4px 14px;border:0;border-radius:999px;background:transparent;color:var(--muted);font:500 13.5px/1.9 var(--f-body);cursor:pointer;white-space:nowrap}
+.lang:hover{color:var(--text)}
+.lang[aria-pressed="true"]{background:var(--flare);color:var(--ink-on-gold);font-weight:600}
+@media (max-width:780px){.nav__lang{padding:6px 4px 2px}.langs{margin:0;width:100%;justify-content:center}}
 .tabs{display:inline-flex;gap:4px;padding:4px;border:1px solid var(--stroke);border-radius:999px;background:var(--panel)}
 .tab{min-height:40px;padding:6px 18px;border:0;border-radius:999px;background:transparent;color:var(--muted);font:500 15px/1.4 var(--f-body);cursor:pointer}
 .tab[aria-selected="true"]{background:var(--flare);color:var(--ink-on-gold);font-weight:600}
@@ -312,12 +318,13 @@ main,footer,.nav{position:relative;z-index:1}
 <header class="nav">
   <div class="wrap nav__inner">
     <a class="brand" href="#top"><svg class="mark" aria-hidden="true"><use href="#btm-logo" width="100%" height="100%"/></svg><span>BURMESE THINKING MACHINE</span></a>
-    <button class="menu-btn" type="button" id="menu-btn" aria-expanded="false" aria-controls="nav-links">Menu</button>
+    <button class="menu-btn" type="button" id="menu-btn" aria-expanded="false" aria-controls="nav-links" data-i18n="nav.menu">Menu</button>
     <ul class="nav__links" id="nav-links">
-      <li><a href="#posts">Post များ</a></li>
-      <li><a href="#book">စာအုပ်</a></li>
-      <li><a href="#about">အကြောင်း</a></li>
-      <li><a href="#contact">ဆက်သွယ်ရန်</a></li>
+      <li><a href="#posts" data-i18n="nav.posts">Post များ</a></li>
+      <li><a href="#book" data-i18n="nav.book">စာအုပ်</a></li>
+      <li><a href="#about" data-i18n="nav.about">အကြောင်း</a></li>
+      <li><a href="#contact" data-i18n="nav.contact">ဆက်သွယ်ရန်</a></li>
+      <li class="nav__lang"><div class="langs" role="group" aria-label="Language"><button class="lang" type="button" data-lang="my" aria-pressed="true">မြန်မာ</button><button class="lang" type="button" data-lang="en" aria-pressed="false">EN</button><button class="lang" type="button" data-lang="zh" aria-pressed="false">中文</button></div></li>
     </ul>
   </div>
 </header>
@@ -328,20 +335,20 @@ main,footer,.nav{position:relative;z-index:1}
     <div class="wrap hero__grid">
       <div class="hero__text">
         <p class="motto">// Think. Learn. Lead.</p>
-        <h1 class="hero__name" id="hero-name">ဦးကြည်သက်ဟန်</h1>
-        <p class="hero__latin grad">Kyi Thet Han</p>
-        <p class="hero__role">Executive Leader / Trainer / Author</p>
-        <p class="tagline">လက်တွေ့ အတွေ့အကြုံတွေကို အလုပ်ခွင်မှာ ချက်ချင်း သုံးလို့ရတဲ့ ကျွမ်းကျင်မှုအဖြစ် မျှဝေပေးနေပါတယ်။</p>
+        <h1 class="hero__name" id="hero-name" data-i18n="hero.name">ဦးကြည်သက်ဟန်</h1>
+        <p class="hero__latin grad" data-i18n="hero.latin">Kyi Thet Han</p>
+        <p class="hero__role" data-i18n="hero.role">Executive Leader / Trainer / Author</p>
+        <p class="tagline" data-i18n="hero.tagline">လက်တွေ့ အတွေ့အကြုံတွေကို အလုပ်ခွင်မှာ ချက်ချင်း သုံးလို့ရတဲ့ ကျွမ်းကျင်မှုအဖြစ် မျှဝေပေးနေပါတယ်။</p>
         <div class="cta">
-          <a class="btn btn--hot" href="#posts">Post တွေ ဖတ်မယ်</a>
-          <a class="btn btn--glass" href="#moments">ပုံတွေ ကြည့်မယ်</a>
+          <a class="btn btn--hot" href="#posts" data-i18n="hero.cta1">Post တွေ ဖတ်မယ်</a>
+          <a class="btn btn--glass" href="#moments" data-i18n="hero.cta2">ပုံတွေ ကြည့်မယ်</a>
         </div>
       </div>
       <div class="portal" id="portal">
         <div class="portal__bg"></div>
         <div class="portal__clip"><img src="assets/kth-1160.webp" srcset="assets/kth-640.webp 640w, assets/kth-1160.webp 1160w" sizes="(min-width: 960px) 500px, 90vw" width="1160" height="1254" alt="ဦးကြည်သက်ဟန်"></div>
         <div class="portal__edge"></div>
-        <a class="plate" href="#book"><img src="assets/pe-cover.webp" width="36" height="51" alt=""><span><b>Prompt Engineering လက်စွဲ</b>အခမဲ့ ebook · Nov 21</span></a>
+        <a class="plate" href="#book"><img src="assets/pe-cover.webp" width="36" height="51" alt=""><span data-i18n="hero.plate"><b>Prompt Engineering လက်စွဲ</b>အခမဲ့ ebook · Nov 21</span></a>
       </div>
     </div>
   </section>
@@ -355,47 +362,47 @@ main,footer,.nav{position:relative;z-index:1}
 
   <section class="band" id="moments" aria-labelledby="moments-title" style="padding-bottom:0">
     <div class="wrap">
-      <h2 class="h2" id="moments-title">Seminars, Workshops, <span class="grad">Trainings and Interviews</span></h2>
-      <p class="lead">Moments from the rooms and stages where I teach, speak and share.</p>
+      <h2 class="h2" id="moments-title" data-i18n="moments.title">Seminars, Workshops, <span class="grad">Trainings and Interviews</span></h2>
+      <p class="lead" data-i18n="moments.lead">Moments from the rooms and stages where I teach, speak and share.</p>
     </div>
     <div class="ring-stage" id="ring-stage" tabindex="0" role="group" aria-label="မှတ်တမ်းပုံများ။ ဘယ်ညာ ဆွဲပြီး လှည့်ကြည့်နိုင်ပါတယ်။">
       <div class="ring3d" id="ring3d">
-        <figure class="shot" style="--i:0"><img src="assets/g1.webp" width="560" height="700" alt="Hoodie ဝတ်ပြီး mic ကိုင်ကာ ရှင်းပြနေပုံ"><figcaption>Knowledge Sharing</figcaption></figure>
-        <figure class="shot" style="--i:1"><img src="assets/g4.webp" width="560" height="700" loading="lazy" alt="သင်တန်းခန်းထဲ slide ပြပြီး သင်ကြားနေပုံ"><figcaption>AI Training</figcaption></figure>
-        <figure class="shot" style="--i:2"><img src="assets/g2.webp" width="560" height="700" loading="lazy" alt="စင်ပေါ်မှာ ဟောပြောနေပုံ"><figcaption>Seminar</figcaption></figure>
-        <figure class="shot" style="--i:3"><img src="assets/g7.webp" width="560" height="700" loading="lazy" alt="ကျောင်းသားများရှေ့ lecture ပေးနေပုံ"><figcaption>University Lecture</figcaption></figure>
-        <figure class="shot" style="--i:4"><img src="assets/g3.webp" width="560" height="700" loading="lazy" alt="Podium မှာ ဆွေးနွေးနေပုံ"><figcaption>Guest Speaker</figcaption></figure>
-        <figure class="shot" style="--i:5"><img src="assets/g5.webp" width="560" height="700" loading="lazy" alt="Corporate workshop မှာ သင်ကြားနေပုံ"><figcaption>Corporate Workshop</figcaption></figure>
-        <figure class="shot" style="--i:6"><img src="assets/g6.webp" width="560" height="700" loading="lazy" alt="TV အစီအစဉ်မှာ ဆွေးနွေးနေပုံ"><figcaption>TV Interview</figcaption></figure>
+        <figure class="shot" style="--i:0"><img src="assets/g1.webp" width="560" height="700" alt="Hoodie ဝတ်ပြီး mic ကိုင်ကာ ရှင်းပြနေပုံ"><figcaption data-i18n="cap.1">Knowledge Sharing</figcaption></figure>
+        <figure class="shot" style="--i:1"><img src="assets/g4.webp" width="560" height="700" loading="lazy" alt="သင်တန်းခန်းထဲ slide ပြပြီး သင်ကြားနေပုံ"><figcaption data-i18n="cap.2">AI Training</figcaption></figure>
+        <figure class="shot" style="--i:2"><img src="assets/g2.webp" width="560" height="700" loading="lazy" alt="စင်ပေါ်မှာ ဟောပြောနေပုံ"><figcaption data-i18n="cap.3">Seminar</figcaption></figure>
+        <figure class="shot" style="--i:3"><img src="assets/g7.webp" width="560" height="700" loading="lazy" alt="ကျောင်းသားများရှေ့ lecture ပေးနေပုံ"><figcaption data-i18n="cap.4">University Lecture</figcaption></figure>
+        <figure class="shot" style="--i:4"><img src="assets/g3.webp" width="560" height="700" loading="lazy" alt="Podium မှာ ဆွေးနွေးနေပုံ"><figcaption data-i18n="cap.5">Guest Speaker</figcaption></figure>
+        <figure class="shot" style="--i:5"><img src="assets/g5.webp" width="560" height="700" loading="lazy" alt="Corporate workshop မှာ သင်ကြားနေပုံ"><figcaption data-i18n="cap.6">Corporate Workshop</figcaption></figure>
+        <figure class="shot" style="--i:6"><img src="assets/g6.webp" width="560" height="700" loading="lazy" alt="TV အစီအစဉ်မှာ ဆွေးနွေးနေပုံ"><figcaption data-i18n="cap.7">TV Interview</figcaption></figure>
       </div>
     </div>
-    <p class="ring-hint" aria-hidden="true">Drag to rotate</p>
+    <p class="ring-hint" aria-hidden="true" data-i18n="moments.hint">Drag to rotate</p>
   </section>
 
   <section class="band" aria-labelledby="topics-title">
     <div class="wrap">
-      <h2 class="h2" id="topics-title">ဘာတွေ <span class="grad">မျှဝေမလဲ</span></h2>
-      <p class="lead">အလုပ်ခွင်မှာ တကယ် အသုံးဝင်တဲ့ အကြောင်းအရာ ၄ ခုကို အဓိကထား ရေးပါတယ်။</p>
+      <h2 class="h2" id="topics-title" data-i18n="topics.title">ဘာတွေ <span class="grad">မျှဝေမလဲ</span></h2>
+      <p class="lead" data-i18n="topics.lead">အလုပ်ခွင်မှာ တကယ် အသုံးဝင်တဲ့ အကြောင်းအရာ ၄ ခုကို အဓိကထား ရေးပါတယ်။</p>
       <ul class="bento">
         <li class="glass topic">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2.5"/><path d="M7 10l3 2.5L7 15"/><path class="accent" d="M12.5 15h4.5"/></svg>
-          <h3>AI</h3>
-          <p>ChatGPT၊ Gemini၊ Claude ကို နေ့စဉ် အလုပ်ထဲမှာ လက်တွေ့ သုံးနည်း</p>
+          <h3 data-i18n="topic1.t">AI</h3>
+          <p data-i18n="topic1.p">ChatGPT၊ Gemini၊ Claude ကို နေ့စဉ် အလုပ်ထဲမှာ လက်တွေ့ သုံးနည်း</p>
         </li>
         <li class="glass topic">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20h5v-4.5h5V11h5V6.5h3"/><path class="accent" d="M17.5 3.5L21 6.5l-3.5 3"/></svg>
-          <h3>Learning &amp; Development</h3>
-          <p>အဖွဲ့အစည်းတွင်း သင်ယူမှုကို စနစ်တကျ တည်ဆောက်နည်း</p>
+          <h3 data-i18n="topic2.t">Learning &amp; Development</h3>
+          <p data-i18n="topic2.p">အဖွဲ့အစည်းတွင်း သင်ယူမှုကို စနစ်တကျ တည်ဆောက်နည်း</p>
         </li>
         <li class="glass topic">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 6.5A2.5 2.5 0 0 1 6 4h7.5A2.5 2.5 0 0 1 16 6.5v4a2.5 2.5 0 0 1-2.5 2.5H9l-3.5 3v-3A2.5 2.5 0 0 1 3.5 10.5z"/><path class="accent" d="M18.5 9.2A2 2 0 0 1 20.5 11v3.6a2 2 0 0 1-2 2v2.6L15.6 17h-3.4a2 2 0 0 1-1.7-1"/></svg>
-          <h3>Soft Skills</h3>
-          <p>ပြောဆိုဆက်ဆံရေး၊ ဦးဆောင်မှုနဲ့ အဖွဲ့လိုက် လုပ်ကိုင်မှု</p>
+          <h3 data-i18n="topic3.t">Soft Skills</h3>
+          <p data-i18n="topic3.p">ပြောဆိုဆက်ဆံရေး၊ ဦးဆောင်မှုနဲ့ အဖွဲ့လိုက် လုပ်ကိုင်မှု</p>
         </li>
         <li class="glass topic">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2.5"/><path d="M9 7V5.5A1.5 1.5 0 0 1 10.5 4h3A1.5 1.5 0 0 1 15 5.5V7"/><path class="accent" d="M3 12.5h18"/></svg>
-          <h3 class="mm">လုပ်ငန်းခွင် အတွေ့အကြုံ</h3>
-          <p>IT၊ telecom နဲ့ banking လုပ်ငန်းတွေကနေ ရလာတဲ့ သင်ခန်းစာများ</p>
+          <h3 class="mm" data-i18n="topic4.t">လုပ်ငန်းခွင် အတွေ့အကြုံ</h3>
+          <p data-i18n="topic4.p">IT၊ telecom နဲ့ banking လုပ်ငန်းတွေကနေ ရလာတဲ့ သင်ခန်းစာများ</p>
         </li>
       </ul>
     </div>
@@ -405,51 +412,44 @@ main,footer,.nav{position:relative;z-index:1}
     <div class="wrap">
       <div class="posts__head">
         <div>
-          <h2 class="h2" id="posts-title">နောက်ဆုံး <span class="grad">post များ</span></h2>
-          <p class="lead">Facebook Page နဲ့ LinkedIn မှာ တင်ထားတဲ့ post တွေကို ဒီမှာ တစ်နေရာတည်း စုထားပါတယ်။</p>
-        </div>
-        <div class="tabs" role="tablist" aria-label="Post ဘာသာစကား">
-          <button class="tab" type="button" role="tab" id="tab-mm" aria-selected="true" aria-controls="panel-mm">မြန်မာ</button>
-          <button class="tab" type="button" role="tab" id="tab-en" aria-selected="false" aria-controls="panel-en" tabindex="-1">English</button>
+          <h2 class="h2" id="posts-title" data-i18n="posts.title">နောက်ဆုံး <span class="grad">post များ</span></h2>
+          <p class="lead" data-i18n="posts.lead">Facebook Page နဲ့ LinkedIn မှာ တင်ထားတဲ့ post တွေကို ဒီမှာ တစ်နေရာတည်း စုထားပါတယ်။</p>
         </div>
       </div>
-      <div id="panel-mm" role="tabpanel" aria-labelledby="tab-mm">
+      <div id="panel-mm">
         <ul class="post-grid">
           <li class="glass post">
             <div class="post__meta"><time datetime="2026-11-18">2026.11.18</time><span class="chip">AI</span></div>
-            <span class="state state--soon">ည ၈ နာရီ တင်မယ်</span>
-            <h3>Prompt ကောင်းဆိုတာ ရှည်တဲ့ prompt မဟုတ်ဘဲ ရှင်းတဲ့ prompt</h3>
-            <p>Prompt တစ်ခုတည်းကို Before / After ယှဉ်ပြီး ပြောင်းလိုက်တဲ့ ၃ ချက်နဲ့ အဖြေ ဘယ်လို ကွာသွားလဲ ပြထားပါတယ်။</p>
+            <span class="state state--soon" data-i18n="post.soon">ည ၈ နာရီ တင်မယ်</span>
+            <h3 data-i18n="p1.t">Prompt ကောင်းဆိုတာ ရှည်တဲ့ prompt မဟုတ်ဘဲ ရှင်းတဲ့ prompt</h3>
+            <p data-i18n="p1.d">Prompt တစ်ခုတည်းကို Before / After ယှဉ်ပြီး ပြောင်းလိုက်တဲ့ ၃ ချက်နဲ့ အဖြေ ဘယ်လို ကွာသွားလဲ ပြထားပါတယ်။</p>
           </li>
           <li class="glass post">
-            <div class="post__meta"><time datetime="2026-11-16">2026.11.16</time><span class="chip">Book</span></div>
-            <span class="state state--soon">ည ၈ နာရီ တင်မယ်</span>
-            <h3>တန်ဆောင်တိုင် ပညာဒါန — Prompt Engineering လက်စွဲ</h3>
-            <p>ဒုတိယမြောက် စာအုပ်ကို ဘာကြောင့် ရေးဖြစ်လဲ၊ ဘာတွေ ပါလဲ။ အခန်း ၃၇ · Framework ၃၀+ · Template ၆၀။ Nov 21 ည ၈ နာရီ အခမဲ့ ထုတ်ဝေမယ်။</p>
+            <div class="post__meta"><time datetime="2026-11-16">2026.11.16</time><span class="chip" data-i18n="chip.book">Book</span></div>
+            <span class="state state--soon" data-i18n="post.soon">ည ၈ နာရီ တင်မယ်</span>
+            <h3 data-i18n="p2.t">တန်ဆောင်တိုင် ပညာဒါန — Prompt Engineering လက်စွဲ</h3>
+            <p data-i18n="p2.d">ဒုတိယမြောက် စာအုပ်ကို ဘာကြောင့် ရေးဖြစ်လဲ၊ ဘာတွေ ပါလဲ။ အခန်း ၃၇ · Framework ၃၀+ · Template ၆၀။ Nov 21 ည ၈ နာရီ အခမဲ့ ထုတ်ဝေမယ်။</p>
           </li>
           <li class="glass post">
             <div class="post__meta"><time datetime="2026-11-13">2026.11.13</time><span class="chip">L&amp;D</span></div>
-            <span class="state">တင်ပြီး</span>
-            <h3>သင်တန်းက တကယ် အလုပ်ဖြစ်လား — Kirkpatrick Model</h3>
-            <p>သင်တန်းရလဒ်ကို Level အလိုက် ဘယ်လို တိုင်းမလဲ၊ မေးခွန်း ၃ ခုပါ checklist နဲ့။ Vendor နဲ့ Internal Training Team တွေအတွက်။</p>
+            <span class="state" data-i18n="post.done">တင်ပြီး</span>
+            <h3 data-i18n="p3.t">သင်တန်းက တကယ် အလုပ်ဖြစ်လား — Kirkpatrick Model</h3>
+            <p data-i18n="p3.d">သင်တန်းရလဒ်ကို Level အလိုက် ဘယ်လို တိုင်းမလဲ၊ မေးခွန်း ၃ ခုပါ checklist နဲ့။ Vendor နဲ့ Internal Training Team တွေအတွက်။</p>
           </li>
           <li class="glass post">
             <div class="post__meta"><time datetime="2026-11-11">2026.11.11</time><span class="chip">AI</span></div>
-            <span class="state">တင်ပြီး</span>
-            <h3>AI က မှားတာလား?</h3>
-            <p>AI အဖြေ မကောင်းရင် prompt ကို Role၊ Context၊ Format ၃ ချက်နဲ့ ပြန်စစ်ကြည့်ပါ။</p>
+            <span class="state" data-i18n="post.done">တင်ပြီး</span>
+            <h3 data-i18n="p4.t">AI က မှားတာလား?</h3>
+            <p data-i18n="p4.d">AI အဖြေ မကောင်းရင် prompt ကို Role၊ Context၊ Format ၃ ချက်နဲ့ ပြန်စစ်ကြည့်ပါ။</p>
           </li>
           <li class="glass post">
-            <div class="post__meta"><time datetime="2026-11-09">2026.11.09</time><span class="chip">Page</span></div>
-            <span class="state">တင်ပြီး</span>
-            <h3>Burmese Thinking Machine ကို စလိုက်ပါပြီ</h3>
-            <p>ကျွန်တော်တို့ တစ်ယောက်ချင်းစီ ဖြတ်သန်းခဲ့ရတဲ့ အတွေ့အကြုံတွေဟာ အများကို မျှဝေလိုက်မှသာ “ပညာ” ဖြစ်လာတာပါ။</p>
+            <div class="post__meta"><time datetime="2026-11-09">2026.11.09</time><span class="chip" data-i18n="chip.page">Page</span></div>
+            <span class="state" data-i18n="post.done">တင်ပြီး</span>
+            <h3 data-i18n="p5.t">Burmese Thinking Machine ကို စလိုက်ပါပြီ</h3>
+            <p data-i18n="p5.d">ကျွန်တော်တို့ တစ်ယောက်ချင်းစီ ဖြတ်သန်းခဲ့ရတဲ့ အတွေ့အကြုံတွေဟာ အများကို မျှဝေလိုက်မှသာ “ပညာ” ဖြစ်လာတာပါ။</p>
           </li>
         </ul>
-        <a class="posts__more" href="https://www.facebook.com/BurmeseThinkingMachine" target="_blank" rel="noopener">Facebook Page မှာ post အားလုံး ဖတ်ရန်</a>
-      </div>
-      <div id="panel-en" role="tabpanel" aria-labelledby="tab-en" hidden>
-        <p class="glass empty">English insights for HR, L&amp;D leaders and business owners will appear here, starting with my LinkedIn posts.</p>
+        <a class="posts__more" href="https://www.facebook.com/BurmeseThinkingMachine" target="_blank" rel="noopener" data-i18n="posts.more">Facebook Page မှာ post အားလုံး ဖတ်ရန်</a>
       </div>
     </div>
   </section>
@@ -468,34 +468,34 @@ main,footer,.nav{position:relative;z-index:1}
               <div class="book__face book__top"></div>
               <div class="book__face book__bottom"></div>
             </div>
-            <p class="drag-hint" aria-hidden="true">ဘယ်ညာ ဆွဲပြီး လှည့်ကြည့်ပါ</p>
+            <p class="drag-hint" aria-hidden="true" data-i18n="book.drag">ဘယ်ညာ ဆွဲပြီး လှည့်ကြည့်ပါ</p>
           </div>
           <div class="book-info">
-            <span class="pill"><span class="pulse" aria-hidden="true"></span>အခမဲ့ ebook</span>
-            <h2 class="h2" id="book-title"><span class="grad">Prompt Engineering</span> လက်စွဲ</h2>
-            <p class="book-sub">ChatGPT၊ Gemini၊ Claude၊ DeepSeek နဲ့ LLM တိုင်းမှာ သုံးနိုင်တဲ့ AI နဲ့ စကားပြောနည်း အပြည့်အစုံ</p>
+            <span class="pill"><span class="pulse" aria-hidden="true"></span><span data-i18n="book.pill">အခမဲ့ ebook</span></span>
+            <h2 class="h2" id="book-title" data-i18n="book.title"><span class="grad">Prompt Engineering</span> လက်စွဲ</h2>
+            <p class="book-sub" data-i18n="book.sub">ChatGPT၊ Gemini၊ Claude၊ DeepSeek နဲ့ LLM တိုင်းမှာ သုံးနိုင်တဲ့ AI နဲ့ စကားပြောနည်း အပြည့်အစုံ</p>
             <div class="count" id="count" aria-hidden="true">
-              <div><b id="cd-d">--</b><span>ရက်</span></div>
-              <div><b id="cd-h">--</b><span>နာရီ</span></div>
-              <div><b id="cd-m">--</b><span>မိနစ်</span></div>
-              <div><b id="cd-s">--</b><span>စက္ကန့်</span></div>
+              <div><b id="cd-d">--</b><span data-i18n="cd.d">ရက်</span></div>
+              <div><b id="cd-h">--</b><span data-i18n="cd.h">နာရီ</span></div>
+              <div><b id="cd-m">--</b><span data-i18n="cd.m">မိနစ်</span></div>
+              <div><b id="cd-s">--</b><span data-i18n="cd.s">စက္ကန့်</span></div>
             </div>
-            <p class="launch" id="launch-line"><b>Nov 21, 2026 (စနေ) ည ၈ နာရီ</b> မှာ ထုတ်ဝေမယ်</p>
+            <p class="launch" id="launch-line" data-i18n="book.launch"><b>Nov 21, 2026 (စနေ) ည ၈ နာရီ</b> မှာ ထုတ်ဝေမယ်</p>
             <dl class="facts">
-              <div class="fact"><dt>အပိုင်း</dt><dd class="grad">၈</dd></div>
-              <div class="fact"><dt>အခန်း</dt><dd class="grad">၃၇</dd></div>
-              <div class="fact"><dt>Prompt Template</dt><dd class="grad">၆၀</dd></div>
+              <div class="fact"><dt data-i18n="fact1.t">အပိုင်း</dt><dd class="grad" data-i18n="fact1.v">၈</dd></div>
+              <div class="fact"><dt data-i18n="fact2.t">အခန်း</dt><dd class="grad" data-i18n="fact2.v">၃၇</dd></div>
+              <div class="fact"><dt data-i18n="fact3.t">Prompt Template</dt><dd class="grad" data-i18n="fact3.v">၆၀</dd></div>
             </dl>
             <ul class="toc" aria-label="စာအုပ်ထဲမှာ">
-              <li>AI နဲ့ Prompt အခြေခံ</li>
-              <li>Prompt Framework ၃၀ ကျော်</li>
-              <li>Prompting နည်းစနစ်များ</li>
-              <li>Prompt ထက် ကျော်လွန်ပြီး</li>
-              <li>Prompt Template ၆၀</li>
+              <li data-i18n="toc.1">AI နဲ့ Prompt အခြေခံ</li>
+              <li data-i18n="toc.2">Prompt Framework ၃၀ ကျော်</li>
+              <li data-i18n="toc.3">Prompting နည်းစနစ်များ</li>
+              <li data-i18n="toc.4">Prompt ထက် ကျော်လွန်ပြီး</li>
+              <li data-i18n="toc.5">Prompt Template ၆၀</li>
             </ul>
             <div class="book-actions">
-              <button class="btn btn--hot" type="button" disabled>Nov 21 မှာ download ရမယ်</button>
-              <p class="note">ထုတ်ဝေတဲ့နေ့ <a href="https://www.facebook.com/BurmeseThinkingMachine" target="_blank" rel="noopener">Facebook Page</a> မှာ ကြေညာပါမယ်။</p>
+              <button class="btn btn--hot" type="button" disabled data-i18n="book.btn">Nov 21 မှာ download ရမယ်</button>
+              <p class="note" data-i18n="book.note">ထုတ်ဝေတဲ့နေ့ <a href="https://www.facebook.com/BurmeseThinkingMachine" target="_blank" rel="noopener">Facebook Page</a> မှာ ကြေညာပါမယ်။</p>
             </div>
           </div>
         </div>
@@ -506,25 +506,25 @@ main,footer,.nav{position:relative;z-index:1}
   <section class="band about" id="about" aria-labelledby="about-title" style="padding-top:0">
     <div class="wrap about-grid">
       <div class="bio">
-        <h2 class="h2" id="about-title">ကျွန်တော့် <span class="grad">အကြောင်း</span></h2>
-        <blockquote class="pull">ကျွန်တော်တို့ တစ်ယောက်ချင်းစီ ဖြတ်သန်းခဲ့ရတဲ့ အတွေ့အကြုံတွေဟာ အများကို မျှဝေလိုက်မှသာ “ပညာ” ဖြစ်လာတာပါ။</blockquote>
-        <p>ကျွန်တော်ကတော့ အခြေခံ IT Service Help Desk ဘဝကနေ စခဲ့ပြီး Team Lead၊ Senior Manager၊ Project Manager၊ ISP Deputy Head နဲ့ IT Head Position များကို အောက်သက်ကြေစွာ အဆင့်ဆင့် ဖြတ်သန်းခဲ့ပါတယ်။</p>
-        <p>တစ်ဖက်မှာလည်း Development and Talent Framework တွေကို အားသန်သူမို့ နည်းပညာဆိုင်ရာ ဘာသာရပ်တွေနဲ့ ပတ်သက်ပြီး ဘုန်းတော်ကြီးသင် ပညာဒါနကျောင်းတွေကနေ International University တွေ၊ Worldwide Education Brand တွေ၊ Vendor-based Vocational Certification တွေရဲ့ အစီအစဉ်တွေအပြင် နိုင်ငံတကာ ထောက်ပံ့မှုနဲ့ INGO အဖွဲ့အစည်းကြီးတွေရဲ့ Development &amp; Learning Project တွေအထိ ဆောင်ရွက်ခဲ့ပါတယ်။ National Level Curriculum Development Project တွေနဲ့ Framework တွေကိုလည်း Myanmar Region ရဲ့ CLO (Chief Learning Officer) အနေနဲ့ Public နဲ့ Private University တွေအထိ အဆင့်မြှင့်တင် ရေးဆွဲ ကူညီ ဆောင်ရွက်ပေးခဲ့ပါတယ်။</p>
-        <p>BIM Group of Companies ရဲ့ Education/Development/Academic/Vocational ပိုင်းမှာလည်း General Manager, Director အဖြစ် တာဝန်ယူခဲ့ပြီး အခု Managing Director အဖြစ် တာဝန်ထမ်းဆောင်နေပါတယ်။</p>
-        <p>မြန်မာနိုင်ငံရဲ့ ဦးဆောင်ဘဏ်ကြီးတစ်ခုမှာလည်း Deputy Function Head of HR / Head of Development and Learning / Deputy General Manager အဖြစ် တာဝန်ယူခဲ့ပါတယ်။ နိုင်ငံတကာ မိတ်ဖက်အဖွဲ့အစည်းတွေနဲ့ ပူးပေါင်းပြီး ဝန်ထမ်း တစ်သောင်းခွဲနီးပါးအတွက် နည်းပညာနဲ့ L&amp;D ကို ပေါင်းစပ်ကာ Learning Framework တွေ၊ Learning Model တွေကို Delivery ပုံစံ အမျိုးမျိုးနဲ့ ပြောင်းလဲမှုတွေ လုပ်ခဲ့ပါတယ်။ အဖွဲ့အစည်းအတွက် လိုအပ်တဲ့ Learning Management System (LMS) ကိုလည်း ကိုယ်တိုင် Design ဆွဲ၊ တည်ဆောက်ပြီး အကောင်အထည်ဖော်ခဲ့ပါတယ်။</p>
-        <p>သမာရိုးကျ Product Information Training အမျိုးမျိုးနဲ့ Booster Program တွေ၊ Quarterly Program တွေ၊ Annual Training Plan တွေကို ဆောင်ရွက်ခဲ့သလို အသစ်သစ်သော နည်းပညာရပ်များကို သမာရိုးကျ ဘာသာရပ်များဖြင့် ပေါင်းစည်းကာ ပြောင်းလဲမှုအသစ်များကိုလည်း ဖော်ဆောင်ခဲ့ပါတယ်။ မြန်မာနိုင်ငံက Private College တွေနဲ့ ပူးပေါင်းပြီး ယခု အောင်မြင်နေတဲ့ Student Ambassadors Program ကိုလည်း ကိုယ်တိုင် ဦးဆောင် Design ရေးဆွဲ တည်ဆောက်ခဲ့ပါတယ်။ ဘဏ်ရဲ့ National Disaster Recovery Project တွေ၊ Mother Room နဲ့ Lactation Room Project တွေ၊ Child Care Center တွေကိုလည်း တာဝန်ယူ ဦးဆောင်ခဲ့ပါတယ်။ ထို့အပြင် အဖွဲ့အစည်းအတွက် Top Employer Institute ရဲ့ Top Employer Myanmar 2024, 2025 &amp; 2026 ထိ ကျန် HR Function Head ၃ ဦးဖြင့် ပူးပေါင်း ယူဆောင်ပေးခဲ့တာလည်း ဖြစ်ပါတယ်။ မြန်မာနိုင်ငံမှာ ဘဏ်က လုပ်ဆောင်တဲ့ ကူညီထောက်ပံ့ရေး လုပ်ငန်းအမျိုးမျိုးအတွက် Social Purpose and Impact Partnership (SPIP) Committee ရဲ့ Committee Member အဖြစ်လည်း တာဝန်ထမ်းဆောင်ခဲ့ပါတယ်။</p>
-        <p>ဒီခရီးတစ်လျှောက် သင်ယူ လေ့လာခဲ့ရတဲ့ သင်ခန်းစာတွေနဲ့ ဖြတ်သန်းခဲ့ရတဲ့ လုပ်ငန်းခွင် အတွေ့အကြုံတွေကို LinkedIn နဲ့ Facebook မှာ တစ်စွန်းတစ တင်ခဲ့ဖူးပါတယ်။ နောက်ပိုင်း စာအုပ်တွေပါ ထုတ်ဖြစ်လာတာမို့ အားလုံးကို တစ်နေရာတည်းမှာ စုပြီး မျှဝေနိုင်ဖို့ "Burmese Thinking Machine" ကို စလိုက်ပါတယ်။</p>
-        <p class="bio__lead">ဒီ Page မှာ အဓိက မျှဝေသွားမယ့် အကြောင်းအရာတွေက —</p>
+        <h2 class="h2" id="about-title" data-i18n="about.title">ကျွန်တော့် <span class="grad">အကြောင်း</span></h2>
+        <blockquote class="pull" data-i18n="about.quote">ကျွန်တော်တို့ တစ်ယောက်ချင်းစီ ဖြတ်သန်းခဲ့ရတဲ့ အတွေ့အကြုံတွေဟာ အများကို မျှဝေလိုက်မှသာ “ပညာ” ဖြစ်လာတာပါ။</blockquote>
+        <p data-i18n="about.p1">ကျွန်တော်ကတော့ အခြေခံ IT Service Help Desk ဘဝကနေ စခဲ့ပြီး Team Lead၊ Senior Manager၊ Project Manager၊ ISP Deputy Head နဲ့ IT Head Position များကို အောက်သက်ကြေစွာ အဆင့်ဆင့် ဖြတ်သန်းခဲ့ပါတယ်။</p>
+        <p data-i18n="about.p2">တစ်ဖက်မှာလည်း Development and Talent Framework တွေကို အားသန်သူမို့ နည်းပညာဆိုင်ရာ ဘာသာရပ်တွေနဲ့ ပတ်သက်ပြီး ဘုန်းတော်ကြီးသင် ပညာဒါနကျောင်းတွေကနေ International University တွေ၊ Worldwide Education Brand တွေ၊ Vendor-based Vocational Certification တွေရဲ့ အစီအစဉ်တွေအပြင် နိုင်ငံတကာ ထောက်ပံ့မှုနဲ့ INGO အဖွဲ့အစည်းကြီးတွေရဲ့ Development &amp; Learning Project တွေအထိ ဆောင်ရွက်ခဲ့ပါတယ်။ National Level Curriculum Development Project တွေနဲ့ Framework တွေကိုလည်း Myanmar Region ရဲ့ CLO (Chief Learning Officer) အနေနဲ့ Public နဲ့ Private University တွေအထိ အဆင့်မြှင့်တင် ရေးဆွဲ ကူညီ ဆောင်ရွက်ပေးခဲ့ပါတယ်။</p>
+        <p data-i18n="about.p3">BIM Group of Companies ရဲ့ Education/Development/Academic/Vocational ပိုင်းမှာလည်း General Manager, Director အဖြစ် တာဝန်ယူခဲ့ပြီး အခု Managing Director အဖြစ် တာဝန်ထမ်းဆောင်နေပါတယ်။</p>
+        <p data-i18n="about.p4">မြန်မာနိုင်ငံရဲ့ ဦးဆောင်ဘဏ်ကြီးတစ်ခုမှာလည်း Deputy Function Head of HR / Head of Development and Learning / Deputy General Manager အဖြစ် တာဝန်ယူခဲ့ပါတယ်။ နိုင်ငံတကာ မိတ်ဖက်အဖွဲ့အစည်းတွေနဲ့ ပူးပေါင်းပြီး ဝန်ထမ်း တစ်သောင်းခွဲနီးပါးအတွက် နည်းပညာနဲ့ L&amp;D ကို ပေါင်းစပ်ကာ Learning Framework တွေ၊ Learning Model တွေကို Delivery ပုံစံ အမျိုးမျိုးနဲ့ ပြောင်းလဲမှုတွေ လုပ်ခဲ့ပါတယ်။ အဖွဲ့အစည်းအတွက် လိုအပ်တဲ့ Learning Management System (LMS) ကိုလည်း ကိုယ်တိုင် Design ဆွဲ၊ တည်ဆောက်ပြီး အကောင်အထည်ဖော်ခဲ့ပါတယ်။</p>
+        <p data-i18n="about.p5">သမာရိုးကျ Product Information Training အမျိုးမျိုးနဲ့ Booster Program တွေ၊ Quarterly Program တွေ၊ Annual Training Plan တွေကို ဆောင်ရွက်ခဲ့သလို အသစ်သစ်သော နည်းပညာရပ်များကို သမာရိုးကျ ဘာသာရပ်များဖြင့် ပေါင်းစည်းကာ ပြောင်းလဲမှုအသစ်များကိုလည်း ဖော်ဆောင်ခဲ့ပါတယ်။ မြန်မာနိုင်ငံက Private College တွေနဲ့ ပူးပေါင်းပြီး ယခု အောင်မြင်နေတဲ့ Student Ambassadors Program ကိုလည်း ကိုယ်တိုင် ဦးဆောင် Design ရေးဆွဲ တည်ဆောက်ခဲ့ပါတယ်။ ဘဏ်ရဲ့ National Disaster Recovery Project တွေ၊ Mother Room နဲ့ Lactation Room Project တွေ၊ Child Care Center တွေကိုလည်း တာဝန်ယူ ဦးဆောင်ခဲ့ပါတယ်။ ထို့အပြင် အဖွဲ့အစည်းအတွက် Top Employer Institute ရဲ့ Top Employer Myanmar 2024, 2025 &amp; 2026 ထိ ကျန် HR Function Head ၃ ဦးဖြင့် ပူးပေါင်း ယူဆောင်ပေးခဲ့တာလည်း ဖြစ်ပါတယ်။ မြန်မာနိုင်ငံမှာ ဘဏ်က လုပ်ဆောင်တဲ့ ကူညီထောက်ပံ့ရေး လုပ်ငန်းအမျိုးမျိုးအတွက် Social Purpose and Impact Partnership (SPIP) Committee ရဲ့ Committee Member အဖြစ်လည်း တာဝန်ထမ်းဆောင်ခဲ့ပါတယ်။</p>
+        <p data-i18n="about.p6">ဒီခရီးတစ်လျှောက် သင်ယူ လေ့လာခဲ့ရတဲ့ သင်ခန်းစာတွေနဲ့ ဖြတ်သန်းခဲ့ရတဲ့ လုပ်ငန်းခွင် အတွေ့အကြုံတွေကို LinkedIn နဲ့ Facebook မှာ တစ်စွန်းတစ တင်ခဲ့ဖူးပါတယ်။ နောက်ပိုင်း စာအုပ်တွေပါ ထုတ်ဖြစ်လာတာမို့ အားလုံးကို တစ်နေရာတည်းမှာ စုပြီး မျှဝေနိုင်ဖို့ "Burmese Thinking Machine" ကို စလိုက်ပါတယ်။</p>
+        <p class="bio__lead" data-i18n="about.lead">ဒီ Page မှာ အဓိက မျှဝေသွားမယ့် အကြောင်းအရာတွေက —</p>
         <ol class="bio__topics">
-          <li>AI ကို လက်တွေ့ လုပ်ငန်းခွင်၊ Business System နဲ့ Management Cycle တွေမှာ ဘယ်လို အသုံးချမလဲ</li>
-          <li>Learning &amp; Development Framework တွေ</li>
-          <li>Soft Skills နဲ့ Leadership က လက်တွေ့မှာ ဘယ်လောက် အရေးပါလဲ</li>
-          <li>ကျွန်တော့် အလုပ်ခရီးက သင်ခန်းစာတွေနဲ့ ကျွန်တော် ရေးသားထားတဲ့ စာအုပ်တွေ</li>
+          <li data-i18n="about.t1">AI ကို လက်တွေ့ လုပ်ငန်းခွင်၊ Business System နဲ့ Management Cycle တွေမှာ ဘယ်လို အသုံးချမလဲ</li>
+          <li data-i18n="about.t2">Learning &amp; Development Framework တွေ</li>
+          <li data-i18n="about.t3">Soft Skills နဲ့ Leadership က လက်တွေ့မှာ ဘယ်လောက် အရေးပါလဲ</li>
+          <li data-i18n="about.t4">ကျွန်တော့် အလုပ်ခရီးက သင်ခန်းစာတွေနဲ့ ကျွန်တော် ရေးသားထားတဲ့ စာအုပ်တွေ</li>
         </ol>
-        <p>စတာတွေကို ရေးသား မျှဝေသွားပါမယ်။</p>
+        <p data-i18n="about.end">စတာတွေကို ရေးသား မျှဝေသွားပါမယ်။</p>
       </div>
       <div class="glass career">
-        <p class="side-title">// IT &amp; Telecom</p>
+        <p class="side-title" data-i18n="car.1">// IT &amp; Telecom</p>
         <ol class="path">
           <li>IT Service Help Desk</li>
           <li>Team Lead</li>
@@ -533,26 +533,26 @@ main,footer,.nav{position:relative;z-index:1}
           <li>ISP Deputy Head</li>
           <li>IT Head</li>
         </ol>
-        <p class="side-title side-title--2">// Education &amp; Development</p>
+        <p class="side-title side-title--2" data-i18n="car.2">// Education &amp; Development</p>
         <ol class="path">
           <li>Chief Learning Officer<small>Myanmar Region · National Level Curriculum Development</small></li>
           <li>General Manager<small>BIM Group of Companies · Education / Development / Academic / Vocational</small></li>
           <li>Director</li>
-          <li class="now">Managing Director<small>လက်ရှိ</small></li>
+          <li class="now">Managing Director<small data-i18n="car.now">လက်ရှိ</small></li>
         </ol>
-        <p class="side-title side-title--2">// Banking · HR &amp; L&amp;D</p>
+        <p class="side-title side-title--2" data-i18n="car.3">// Banking · HR &amp; L&amp;D</p>
         <ul class="roles">
           <li>Deputy Function Head of HR</li>
           <li>Head of Development and Learning</li>
           <li>Deputy General Manager</li>
         </ul>
-        <p class="side-title side-title--2">// Highlights</p>
+        <p class="side-title side-title--2" data-i18n="car.4">// Highlights</p>
         <ul class="wins">
-          <li>ဝန်ထမ်း တစ်သောင်းခွဲနီးပါးအတွက် Learning Framework နဲ့ Learning Model များ</li>
-          <li>Learning Management System (LMS) ကို ကိုယ်တိုင် Design ဆွဲ တည်ဆောက်</li>
-          <li>Student Ambassadors Program ကို ဦးဆောင် ရေးဆွဲ တည်ဆောက်</li>
-          <li>Top Employer Myanmar 2024, 2025 &amp; 2026</li>
-          <li>SPIP Committee Member</li>
+          <li data-i18n="win.1">ဝန်ထမ်း တစ်သောင်းခွဲနီးပါးအတွက် Learning Framework နဲ့ Learning Model များ</li>
+          <li data-i18n="win.2">Learning Management System (LMS) ကို ကိုယ်တိုင် Design ဆွဲ တည်ဆောက်</li>
+          <li data-i18n="win.3">Student Ambassadors Program ကို ဦးဆောင် ရေးဆွဲ တည်ဆောက်</li>
+          <li data-i18n="win.4">Top Employer Myanmar 2024, 2025 &amp; 2026</li>
+          <li data-i18n="win.5">SPIP Committee Member</li>
         </ul>
       </div>
     </div>
@@ -561,10 +561,10 @@ main,footer,.nav{position:relative;z-index:1}
 
 <footer class="band contact" id="contact" aria-labelledby="contact-title">
   <div class="wrap">
-    <h2 class="contact__title" id="contact-title">မေးချင်တာ ရှိရင် <span class="grad">message ပို့ပါ</span></h2>
-    <p>အလုပ်ခွင်မှာ AI သုံးတာ၊ L&amp;D၊ soft skills နဲ့ ပတ်သက်ပြီး မေးချင်တာ၊ ပူးပေါင်းချင်တာ ရှိရင် Facebook Page ကနေ ဆက်သွယ်နိုင်ပါတယ်။ ကျွန်တော် ကိုယ်တိုင် ဖတ်ပြီး ပြန်ဖြေပေးပါမယ်။</p>
+    <h2 class="contact__title" id="contact-title" data-i18n="contact.title">မေးချင်တာ ရှိရင် <span class="grad">message ပို့ပါ</span></h2>
+    <p data-i18n="contact.p">အလုပ်ခွင်မှာ AI သုံးတာ၊ L&amp;D၊ soft skills နဲ့ ပတ်သက်ပြီး မေးချင်တာ၊ ပူးပေါင်းချင်တာ ရှိရင် Facebook Page ကနေ ဆက်သွယ်နိုင်ပါတယ်။ ကျွန်တော် ကိုယ်တိုင် ဖတ်ပြီး ပြန်ဖြေပေးပါမယ်။</p>
     <div class="cta">
-      <a class="btn btn--hot" href="https://m.me/BurmeseThinkingMachine" target="_blank" rel="noopener">Messenger မှာ message ပို့ရန်</a>
+      <a class="btn btn--hot" href="https://m.me/BurmeseThinkingMachine" target="_blank" rel="noopener" data-i18n="contact.btn">Messenger မှာ message ပို့ရန်</a>
       <a class="btn btn--glass" href="https://www.facebook.com/BurmeseThinkingMachine" target="_blank" rel="noopener">Facebook Page</a>
     </div>
     <p class="handle">facebook.com/BurmeseThinkingMachine</p>
@@ -575,6 +575,46 @@ main,footer,.nav{position:relative;z-index:1}
   </div>
 </footer>
 
+<script>
+/* Page language: Burmese (default, in the markup), English and Chinese. */
+(() => {
+  const DICT = { en: {"nav.posts": "Posts", "nav.book": "Book", "nav.about": "About", "nav.contact": "Contact", "nav.menu": "Menu", "hero.name": "Kyi Thet Han", "hero.latin": "ဦးကြည်သက်ဟန်", "hero.role": "Executive Leader / Trainer / Author", "hero.tagline": "Turning real workplace experience into skills you can use at work the same day.", "hero.cta1": "Read the posts", "hero.cta2": "See the photos", "hero.plate": "<b>Prompt Engineering Handbook</b>Free ebook · Nov 21", "moments.title": "Seminars, Workshops, <span class=\"grad\">Trainings and Interviews</span>", "moments.lead": "Moments from the rooms and stages where I teach, speak and share.", "moments.hint": "Drag to rotate", "cap.1": "Knowledge Sharing", "cap.2": "AI Training", "cap.3": "Seminar", "cap.4": "University Lecture", "cap.5": "Guest Speaker", "cap.6": "Corporate Workshop", "cap.7": "TV Interview", "topics.title": "What I <span class=\"grad\">share</span>", "topics.lead": "Four things that actually help once you are back at your desk.", "topic1.t": "AI", "topic1.p": "Using ChatGPT, Gemini and Claude in everyday work.", "topic2.t": "Learning &amp; Development", "topic2.p": "Building learning inside an organisation, properly.", "topic3.t": "Soft Skills", "topic3.p": "Communication, leadership and working as a team.", "topic4.t": "Real Experience", "topic4.p": "Lessons from IT, telecom and banking.", "posts.title": "Latest <span class=\"grad\">posts</span>", "posts.lead": "Everything I post on my Facebook Page and on LinkedIn, collected in one place.", "post.soon": "Going live 8 PM", "post.done": "Posted", "chip.book": "Book", "chip.page": "Page", "p1.t": "A good prompt is not a long prompt — it is a clear one", "p1.d": "The same prompt before and after: three changes, and how differently the answer comes back.", "p2.t": "A Tazaungdaing gift of knowledge — the Prompt Engineering Handbook", "p2.d": "Why I wrote a second book and what is inside it. 37 chapters · 30+ frameworks · 60 templates. Free from 8 PM on Nov 21.", "p3.t": "Is the training actually working? — the Kirkpatrick Model", "p3.d": "How to measure training results level by level, with a three-question checklist. For vendors and internal training teams.", "p4.t": "Is it the AI that got it wrong?", "p4.d": "When the answer is poor, check your prompt against three things: role, context and format.", "p5.t": "Burmese Thinking Machine starts here", "p5.d": "What each of us has lived through only becomes knowledge once it is shared.", "posts.more": "Read every post on the Facebook Page", "book.drag": "Drag to turn the book", "book.pill": "Free ebook", "book.title": "<span class=\"grad\">Prompt Engineering</span> Handbook", "book.sub": "A complete guide to talking to AI — for ChatGPT, Gemini, Claude, DeepSeek and any other LLM.", "cd.d": "days", "cd.h": "hours", "cd.m": "min", "cd.s": "sec", "book.launch": "Out on <b>Sat, Nov 21, 2026 at 8 PM</b> Myanmar time", "book.out": "<b>It is out.</b> You can get it on the Facebook Page", "fact1.t": "Parts", "fact1.v": "8", "fact2.t": "Chapters", "fact2.v": "37", "fact3.t": "Templates", "fact3.v": "60", "toc.1": "AI and prompt basics", "toc.2": "Over 30 prompt frameworks", "toc.3": "Prompting techniques", "toc.4": "Beyond prompting", "toc.5": "60 prompt templates", "book.btn": "Download from Nov 21", "book.note": "I will announce it on the <a href=\"https://www.facebook.com/BurmeseThinkingMachine\" target=\"_blank\" rel=\"noopener\">Facebook Page</a> on launch day.", "about.title": "About <span class=\"grad\">me</span>", "about.quote": "What each of us has lived through only becomes knowledge once it is shared.", "about.p1": "I started at the bottom, on an IT service help desk, and worked my way up step by step through Team Lead, Senior Manager, Project Manager, ISP Deputy Head and IT Head.", "about.p2": "Alongside that I have always been drawn to development and talent frameworks. On technical subjects I have worked everywhere from monastic free schools to international universities, worldwide education brands and vendor-based vocational certifications, as well as development and learning projects run by internationally funded INGOs. As Chief Learning Officer for the Myanmar region I helped design and upgrade national-level curriculum development projects and frameworks for both public and private universities.", "about.p3": "In the education, development, academic and vocational side of BIM Group of Companies I served as General Manager and then Director, and I am currently Managing Director.", "about.p4": "At one of Myanmar's leading banks I served as Deputy Function Head of HR, Head of Development and Learning, and Deputy General Manager. Working with international partner organisations, I brought technology and L&amp;D together for a workforce of nearly fifteen thousand people, reshaping learning frameworks, learning models and the ways they were delivered. I also designed and built the organisation's Learning Management System (LMS) myself.", "about.p5": "Besides the usual product-information training, booster programmes, quarterly programmes and annual training plans, I combined new technologies with conventional subjects to create something different. With private colleges in Myanmar I led the design of the Student Ambassadors Program that is still running successfully today. I also led the bank's national disaster recovery projects, its mother and lactation room projects and its child care centres. Together with three other HR function heads I helped the organisation earn Top Employer Myanmar 2024, 2025 and 2026, and I served as a member of the Social Purpose and Impact Partnership (SPIP) Committee.", "about.p6": "I used to share pieces of what I learned on this journey on LinkedIn and Facebook. Once I started writing books as well, I began “Burmese Thinking Machine” so that all of it could sit in one place.", "about.lead": "What I mainly share here —", "about.t1": "How to apply AI in real work, in business systems and across the management cycle", "about.t2": "Learning &amp; Development frameworks", "about.t3": "How much soft skills and leadership really matter in practice", "about.t4": "Lessons from my own career, and the books I write", "about.end": "— that is what I will keep writing about.", "car.1": "// IT &amp; Telecom", "car.2": "// Education &amp; Development", "car.3": "// Banking · HR &amp; L&amp;D", "car.4": "// Highlights", "car.now": "current", "win.1": "Learning frameworks and learning models for nearly 15,000 staff", "win.2": "Designed and built a Learning Management System (LMS) myself", "win.3": "Led the design and build of the Student Ambassadors Program", "win.4": "Top Employer Myanmar 2024, 2025 &amp; 2026", "win.5": "SPIP Committee Member", "contact.title": "Got a question? <span class=\"grad\">Send a message</span>", "contact.p": "If you want to ask about using AI at work, about L&amp;D or soft skills, or you would like to work together, reach me through the Facebook Page. I read and answer myself.", "contact.btn": "Message me on Messenger"}, zh: {"nav.posts": "文章", "nav.book": "书籍", "nav.about": "关于", "nav.contact": "联系", "nav.menu": "菜单", "hero.name": "Kyi Thet Han", "hero.latin": "ဦးကြည်သက်ဟန်", "hero.role": "企业高管 / 培训师 / 作者", "hero.tagline": "把真实的职场经验，转化为当天就能用上的能力。", "hero.cta1": "阅读文章", "hero.cta2": "查看照片", "hero.plate": "<b>Prompt Engineering 手册</b>免费电子书 · 11月21日", "moments.title": "研讨会、工作坊、<span class=\"grad\">培训与访谈</span>", "moments.lead": "我在课堂与舞台上教学、演讲与分享的现场记录。", "moments.hint": "拖动可旋转", "cap.1": "知识分享", "cap.2": "AI 培训", "cap.3": "研讨会", "cap.4": "大学讲座", "cap.5": "特邀讲者", "cap.6": "企业工作坊", "cap.7": "电视访谈", "topics.title": "我分享<span class=\"grad\">什么</span>", "topics.lead": "专注于四件回到工位就真正用得上的事。", "topic1.t": "AI", "topic1.p": "在日常工作中真正用好 ChatGPT、Gemini 与 Claude。", "topic2.t": "学习与发展", "topic2.p": "如何在组织内部系统地建立学习体系。", "topic3.t": "软技能", "topic3.p": "沟通、领导力与团队协作。", "topic4.t": "职场经验", "topic4.p": "来自 IT、电信与银行业的经验与教训。", "posts.title": "最新<span class=\"grad\">文章</span>", "posts.lead": "我在 Facebook 主页与 LinkedIn 发布的内容，都集中在这里。", "post.soon": "晚上 8 点发布", "post.done": "已发布", "chip.book": "书籍", "chip.page": "主页", "p1.t": "好的提示词不在于长，而在于清楚", "p1.d": "同一个提示词的前后对比：三处改动，答案就截然不同。", "p2.t": "点灯节的知识布施 —— Prompt Engineering 手册", "p2.d": "为什么写第二本书，里面有什么。37 章 · 30+ 框架 · 60 个模板。11 月 21 日晚上 8 点免费发布。", "p3.t": "培训到底有没有效？—— 柯氏四级评估模型", "p3.d": "如何按层级衡量培训成效，并附三个问题的检查清单。适合培训供应商与企业内训团队。", "p4.t": "真的是 AI 错了吗？", "p4.d": "答案不理想时，用角色、背景、格式三点重新检查你的提示词。", "p5.t": "Burmese Thinking Machine 正式开始", "p5.d": "我们每个人所经历的一切，只有分享出去，才会成为知识。", "posts.more": "在 Facebook 主页阅读全部文章", "book.drag": "拖动可翻转书本", "book.pill": "免费电子书", "book.title": "<span class=\"grad\">Prompt Engineering</span> 手册", "book.sub": "与 AI 对话的完整指南 —— 适用于 ChatGPT、Gemini、Claude、DeepSeek 等各种大模型。", "cd.d": "天", "cd.h": "小时", "cd.m": "分", "cd.s": "秒", "book.launch": "<b>2026 年 11 月 21 日（周六）晚上 8 点</b>（缅甸时间）发布", "book.out": "<b>已经发布。</b>可在 Facebook 主页取得", "fact1.t": "部分", "fact1.v": "8", "fact2.t": "章节", "fact2.v": "37", "fact3.t": "模板", "fact3.v": "60", "toc.1": "AI 与提示词基础", "toc.2": "30 多种提示词框架", "toc.3": "提示词技巧与方法", "toc.4": "超越提示词之后", "toc.5": "60 个提示词模板", "book.btn": "11 月 21 日开放下载", "book.note": "发布当天会在 <a href=\"https://www.facebook.com/BurmeseThinkingMachine\" target=\"_blank\" rel=\"noopener\">Facebook 主页</a> 公布。", "about.title": "关于<span class=\"grad\">我</span>", "about.quote": "我们每个人所经历的一切，只有分享出去，才会成为知识。", "about.p1": "我从最基层的 IT 服务台做起，一步步走过 Team Lead、Senior Manager、Project Manager、ISP 副主管与 IT 主管等职位。", "about.p2": "与此同时，我一直关注人才发展与培养框架。在技术类课程方面，我的工作涵盖寺院义学、国际大学、全球教育品牌与厂商认证的职业资格课程，也包括国际资助机构与 INGO 的发展与学习项目。作为缅甸区域的首席学习官（CLO），我参与设计并提升了国家级课程开发项目与框架，服务对象包括公立与私立大学。", "about.p3": "在 BIM Group of Companies 的教育、发展、学术与职业培训板块，我曾担任总经理与总监，目前担任董事总经理。", "about.p4": "在缅甸一家领先银行，我先后担任人力资源副职能主管、发展与学习主管以及副总经理。与国际合作机构携手，为近一万五千名员工把技术与学习发展结合起来，重塑学习框架、学习模式与交付方式，并亲自设计、搭建了该机构的学习管理系统（LMS）。", "about.p5": "除了常规的产品知识培训、强化课程、季度项目与年度培训计划之外，我也把新技术与传统科目结合，推动了新的改变。我与缅甸多所私立院校合作，主导设计了至今仍在成功运行的 Student Ambassadors Program。我还负责过银行的国家级灾后恢复项目、母婴哺乳室项目与托儿中心。与另外三位 HR 职能主管一起，帮助机构连续获得 2024、2025 与 2026 年缅甸最佳雇主（Top Employer Myanmar）认证，并担任社会公益与影响力伙伴（SPIP）委员会委员。", "about.p6": "这一路走来的心得与经验，我曾零散地发在 LinkedIn 与 Facebook 上。后来开始写书，于是创办了「Burmese Thinking Machine」，把这些内容集中在一个地方分享。", "about.lead": "我在这里主要分享 ——", "about.t1": "如何把 AI 用在真实工作、业务系统与管理循环中", "about.t2": "学习与发展（L&amp;D）框架", "about.t3": "软技能与领导力在实务中究竟有多重要", "about.t4": "我职业生涯中的经验，以及我写的书", "about.end": "—— 这些就是我会持续书写与分享的内容。", "car.1": "// IT 与电信", "car.2": "// 教育与发展", "car.3": "// 银行 · HR 与 L&amp;D", "car.4": "// 亮点", "car.now": "现任", "win.1": "为近 15,000 名员工建立学习框架与学习模式", "win.2": "亲自设计并搭建学习管理系统（LMS）", "win.3": "主导设计并建立 Student Ambassadors Program", "win.4": "Top Employer Myanmar 2024、2025 与 2026", "win.5": "SPIP 委员会委员", "contact.title": "有问题吗？<span class=\"grad\">给我留言</span>", "contact.p": "关于在工作中使用 AI、学习与发展（L&amp;D）或软技能方面的问题，或是希望合作，都可以通过 Facebook 主页联系我。我会亲自阅读并回复。", "contact.btn": "通过 Messenger 留言"} };
+  const nodes = Array.from(document.querySelectorAll('[data-i18n]'));
+  const my = new Map(nodes.map((n) => [n, n.innerHTML]));
+  const buttons = Array.from(document.querySelectorAll('.lang'));
+  let cur = 'my';
+
+  window.BTM_T = (key) => (cur === 'my' ? null : (DICT[cur] && DICT[cur][key])) || null;
+
+  const cjk = () => {
+    if (document.getElementById('zh-font')) return;
+    const l = document.createElement('link');
+    l.id = 'zh-font'; l.rel = 'stylesheet';
+    l.href = 'https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap';
+    document.head.appendChild(l);
+  };
+
+  const apply = (lang, save) => {
+    cur = DICT[lang] ? lang : 'my';
+    if (cur === 'zh') cjk();
+    nodes.forEach((n) => {
+      const key = n.dataset.i18n;
+      const v = cur === 'my' ? my.get(n) : (DICT[cur][key] != null ? DICT[cur][key] : my.get(n));
+      if (v != null && n.innerHTML !== v) n.innerHTML = v;
+    });
+    document.documentElement.lang = cur === 'my' ? 'my' : (cur === 'zh' ? 'zh-Hans' : 'en');
+    buttons.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.lang === cur)));
+    if (save) { try { localStorage.setItem('btm-lang', cur); } catch (e) {} }
+  };
+
+  buttons.forEach((b) => b.addEventListener('click', () => apply(b.dataset.lang, true)));
+
+  let saved = null;
+  try { saved = localStorage.getItem('btm-lang'); } catch (e) {}
+  if (!saved && /^zh\b/i.test(navigator.language || '')) saved = 'zh';
+  if (saved && saved !== 'my') apply(saved, false);
+})();
+</script>
 <script>
 (() => {
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -588,23 +628,6 @@ main,footer,.nav{position:relative;z-index:1}
   });
   links.addEventListener('click', (e) => {
     if (e.target.closest('a')) { links.classList.remove('is-open'); menuBtn.setAttribute('aria-expanded', 'false'); }
-  });
-
-  // Post language tabs
-  const tabs = Array.from(document.querySelectorAll('.tab'));
-  const select = (tab) => tabs.forEach((t) => {
-    const on = t === tab;
-    t.setAttribute('aria-selected', String(on));
-    t.tabIndex = on ? 0 : -1;
-    document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
-  });
-  tabs.forEach((t, i) => {
-    t.addEventListener('click', () => select(t));
-    t.addEventListener('keydown', (e) => {
-      if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
-      const next = tabs[(i + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length];
-      select(next); next.focus();
-    });
   });
 
   // Glass cards: light follows the pointer
@@ -654,7 +677,9 @@ main,footer,.nav{position:relative;z-index:1}
     const left = launch - Date.now();
     if (left <= 0) {
       document.getElementById('count').hidden = true;
-      document.getElementById('launch-line').innerHTML = '<b>ထွက်ပြီ။</b> Facebook Page မှာ ရယူနိုင်ပါတယ်';
+      const ll = document.getElementById('launch-line');
+      ll.dataset.i18n = 'book.out';
+      ll.innerHTML = (window.BTM_T && BTM_T('book.out')) || '<b>ထွက်ပြီ။</b> Facebook Page မှာ ရယူနိုင်ပါတယ်';
       return false;
     }
     const s = Math.floor(left / 1000);
